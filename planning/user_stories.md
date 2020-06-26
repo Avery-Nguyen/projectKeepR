@@ -38,3 +38,7 @@ D POST /website/:id/delete
 
 ### non-users
 B GET /login
+
+## WIREFRAME SCEENSHOTS
+!["MAIN Page"](https://github.com/Avery-Nguyen/projectKeepR/blob/master/planning/docs/Main_page_wireframe.png)
+!["LOGIN Page"](https://github.com/Avery-Nguyen/projectKeepR/blob/master/planning/docs/Login_page_wireframe.png)
