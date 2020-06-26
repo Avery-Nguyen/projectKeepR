@@ -29,12 +29,12 @@
 
 
 ## Routes
-# users
+### users
 B GET /websites 
 R GET /websites/:id
 E POST /website/:id
 A POST /websites
 D POST /website/:id/delete
 
-# non-users
+### non-users
 B GET /login
