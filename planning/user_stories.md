@@ -24,3 +24,5 @@
 - As a user, I want my sites/passwords categorized because it is convienient 
 
 - As a non-user, I should not be able to see a companies passwords/accounts
+
+## ERD 
