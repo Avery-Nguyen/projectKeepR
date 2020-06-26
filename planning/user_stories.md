@@ -26,7 +26,7 @@
 - As a non-user, I should not be able to see a companies passwords/accounts
 
 ## ERD 
-
+!["ERD Screenshot"](https://github.com/Avery-Nguyen/projectKeepR/blob/master/planning/docs/ERD_password_keepr.png?raw=true)
 
 ## Routes
 ### users
