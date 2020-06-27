@@ -23,9 +23,67 @@
       <p>Company</p>
     </div>
     <div>
-      <button>Log Out</button>
-      <button>New Password</button>
+      <button id='logout'>Log Out</button>
+      <button id='createPassword'>New Password</button>
     </div>
+    <main>
+      <section>
+        <article>
+          <!-- New website form -->
+          <form method="POST">
+            <h2>New Password Form</h2>
+            <input type="text" placeholder="Website" id='addWebsite'>
+            <input type="text" placeholder="Username" id='addUsername'>
+            <input type="text" placeholder="Password" id='addPassword'>
+            <div id='passwordCriteria'>
+              <input type="radio" id='uppercase' value='uppercase'>
+              <label for="uppercase">Uppercase</label><br>
+              <input type="radio" id="lowercase" name="lowercase" value="lowercase">
+              <label for="lowercase">Lowercase</label><br>
+              <input type="radio" id="specialCharacter" name="specialCharacter" value="specialCharacter">
+              <label for="specialCharacter">Special Characters</label><br>
+              <input type="radio" id="numbers" name="numbers" value="numbers">
+              <label for="numbers">Numbers</label><br>
+            </div>
+            <select>
+              <option value="social" id='social'>Social</option>
+              <option value="work" id='work'>Work</option>
+              <option value="entertainment" id='entertainment'>Entertainment</option>
+              <option value="others" id='others'>Others</option>
+            </select>
+            <input type="number" min=1 max=255 id='charLimit'>
+            <button id='generate'>Generate</button>
+            <button id='add'>Add</button>
+          </form>
+        </article>
+      </section>
+      <sections>
+        <article>
+          <!-- display website info -->
+          <h2>Catagories</h2>
+          <h2>Website Info</h2>
+          <h3>Username</h3> <!-- stretch to change username-->
+          <h3>Website</h3>
+          <form>
+            <h3 id='editPassword'>Password</h3> <!-- toggle or on hover (or the eye thing)-->
+            <button id='copy'>Copy</button>
+            <button id='edit'>Edit</button>
+            <button id='delete'>Delete</button>
+          </form>
+        </article>
+      </sections>
+      <aside id='filter'>
+        <h2>sidebar</h2>
+        <input type="radio" id='all' name='all' value='all'>
+        <label for="all">All</label><br>
+        <input type="radio" id="social" name="social" value="social">
+        <label for="social">Social</label><br>
+        <input type="radio" id="other" name="entertainment" value="entertainment">
+        <label for="entertainment">Entertainment</label><br>
+        <input type="radio" id="work" name="work" value="work">
+        <label for="work">Work</label><br>
+      </aside>
+    </main>
   </header>
 </body>
 
