@@ -13,6 +13,22 @@ const router  = express.Router();
         res.redirect('/');
       })
     });
+
+    router.get("/", (req, res) => {
+      let query = `SELECT * FROM websites`;
+      console.log(query);
+      db.query(query)
+        .then(data => {
+          const websites = data.rows;
+          res.json({ websites });
+        })
+        .catch(err => {
+          res
+            .status(500)
+            .json({ error: err.message });
+        });
+    });
+
     return router;
   };
 
