@@ -34,11 +34,20 @@ aside {
 
 }
 
-// website display
 
-article {
+//New website form
+.new-website {
   display: flex;
-  justify-content: space-between;
-  background-color: coral;
+  justify-content: space-around;
+  width: 100%;
 }
 
+.url-info {
+  display: flex;
+  flex-direction: column;
+}
+
+#add {
+  display: flex;
+  align-self: flex-end;
+}

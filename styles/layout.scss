@@ -2,7 +2,7 @@
 
 body {
   background-color: #EEE;
-
+  height: 100%;
   h1 {
     color: #244751;
   }
@@ -18,7 +18,13 @@ main {
   justify-content: flex-end;
 }
 
+article {
+  display: flex;
+  justify-content: space-around;
+  background-color: coral;
+
+}
 .website-display {
-  width: 80%;
+  width: 90%;
   margin-left: 1rem;
 }
