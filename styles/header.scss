@@ -1,4 +1,7 @@
-$primary: cadetblue;
+$primary: #0069c0;
+$sidebarColor: #cfd8dc;
+$formColor: #cfd8dc;
+$websiteDisplay: #6ec6ff;
 
 header {
   display: flex;
@@ -26,20 +29,47 @@ header {
   margin: 1rem;
 }
 
-// sidebar
+// website display
+.all-websites {
+  display: flex;
+  flex-direction: row;
+}
+.arrange-website {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
 
-
-aside {
-  background-color: purple;
+.account {
+  display: flex;
+  flex-direction: column;
+  height: 10rem;
+  width: 20rem;
+  margin: 1rem;
+  background-color: $websiteDisplay;
+  box-shadow: 5px 5px 10px #888888;
 
 }
 
+.website-info {
+  display: flex;
+  justify-content: space-between;
+  background-color: #ffffff;
+}
 
-//New website form
-.new-website {
+.website-img {
+  height: 50px;
+  width: 50px;
+  margin: auto;
+}
+
+ // New website Form
+ .new-website {
   display: flex;
   justify-content: space-around;
   width: 100%;
+  background-color: $formColor;
 }
 
 .url-info {
@@ -50,4 +80,10 @@ aside {
 #add {
   display: flex;
   align-self: flex-end;
+}
+
+// Sidebar
+
+aside {
+  background-color: $sidebarColor;
 }

@@ -1,6 +1,10 @@
-
-
-article {
+.arrange-website {
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.account {
+  margin: 5vh 0;
+  border: 2px solid black
 }

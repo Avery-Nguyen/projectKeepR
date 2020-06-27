@@ -1,15 +1,22 @@
 // See: https://sass-lang.com/
+$backgroundColor:#eceff1;
+// font-family: 'Roboto Mono', monospace;
+$primaryFontColor: #263238;
+$secondaryFontColor: #4f5b62;
 
 body {
-  background-color: #EEE;
+  background-color: $backgroundColor;
   height: 100%;
+  font-family: 'Roboto', sans-serif;
+  color: $primaryFontColor;
   h1 {
     color: #244751;
   }
+
 }
 
-form {
-  background-color: greenyellow;
+h3 {
+  font-weight: lighter;
 }
 
 main {
@@ -21,7 +28,6 @@ main {
 article {
   display: flex;
   justify-content: space-around;
-  background-color: coral;
 
 }
 .website-display {
