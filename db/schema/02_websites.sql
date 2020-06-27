@@ -4,5 +4,6 @@ CREATE TABLE websites (
   user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
   url VARCHAR(255) NOT NULL,
   password VARCHAR(255) NOT NULL,
-  username VARCHAR(255) NOT NULL
+  username VARCHAR(255) NOT NULL,
+  category VARCHAR(255) NOT NULL
 );
