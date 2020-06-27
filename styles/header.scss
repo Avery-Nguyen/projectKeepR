@@ -1,0 +1,27 @@
+$primary: cadetblue;
+
+header {
+  display: flex;
+  background-color: $primary;
+  justify-content: space-between;
+
+}
+
+.row-beside {
+  display: flex;
+  align-items: center;
+}
+
+.header-btn {
+  display: flex;
+  align-items: center;
+  margin-right: 1rem;
+}
+
+.userDisplay {
+  margin-right: 1rem;
+}
+
+#logo {
+  margin: 1rem;
+}
