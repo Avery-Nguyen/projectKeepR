@@ -11,3 +11,14 @@ body {
 form {
   background-color: greenyellow;
 }
+
+main {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
+.website-display {
+  width: 80%;
+  margin-left: 1rem;
+}
