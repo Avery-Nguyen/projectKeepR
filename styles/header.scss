@@ -59,24 +59,43 @@ header {
  .new-website {
   display: flex;
   justify-content: space-around;
-  width: 100%;
+  padding: 1rem;
   background-color: $formColor;
 }
 
 .url-info {
   display: flex;
   flex-direction: column;
+  padding: 0.5rem;
 }
 
+.add-new-web {
+  border: none;
+  outline: none;
+  background-color: Transparent;
+}
+
+.radio {
+  padding: 1rem;
+}
+
+#passwordCriteria {
+  padding: 1rem;
+}
 #add {
   display: flex;
   align-self: flex-end;
+}
+
+#addPassword {
+  margin-right: 1rem;
 }
 
 // Sidebar
 
 aside {
   background-color: $sidebarColor;
+  width: 15%;
 }
 
 //add password button
@@ -87,7 +106,7 @@ aside {
   z-index: 99;
   border: none;
   outline: none;
-  color: white;
+  background-color: Transparent;
   border-radius: 50%;
   font-size: 60px;
   color: red

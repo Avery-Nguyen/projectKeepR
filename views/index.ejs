@@ -15,6 +15,7 @@
 
   <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
   <script type="text/javascript" src="/scripts/app.js"></script>
+  <script type="text/javascript" src="/scripts/styles.js"></script>
 </head>
 
 <body>
@@ -30,13 +31,13 @@
   </header>
     <main>
       <div class='website-display'>
-      <section> <!-- New website form -->
+      <section class='new-website-form'> <!-- New website form -->
         <article>
           <!-- <h2>New Password Form</h2> -->
           <form class="row-beside new-website" method="POST" action="/websites">
             <div class='url-info'>
-              <input type="text" placeholder="Website" name="newWebsite" id='addWebsite'>
-              <input type="text" placeholder="Username"  name="newUsername" id='addUsername'>
+              <input type="text" placeholder="Website" name="newWebsite" id='addWebsite'><br>
+              <input type="text" placeholder="Username"  name="newUsername" id='addUsername'><br>
               <select name="newCategory">
                 <option value="social" id='social'>Social</option>
                 <option value="work" id='work'>Work</option>
@@ -45,20 +46,21 @@
               </select>
             </div>
             <div id='passwordCriteria'>
-              <input type="radio" id='uppercase' value='uppercase'>
+              <input type="radio" class='radio' id='uppercase' value='uppercase'>
               <label for="uppercase">Uppercase</label><br>
-              <input type="radio" id="lowercase" name="lowercase" value="lowercase">
+              <input type="radio" class='radio' id="lowercase" name="lowercase" value="lowercase">
               <label for="lowercase">Lowercase</label><br>
-              <input type="radio" id="specialCharacter" name="specialCharacter" value="specialCharacter">
+              <input type="radio" class='radio' id="specialCharacter" name="specialCharacter" value="specialCharacter">
               <label for="specialCharacter">Special Characters</label><br>
-              <input type="radio" id="numbers" name="numbers" value="numbers">
+              <input type="radio" class='radio' id="numbers" name="numbers" value="numbers">
               <label for="numbers">Numbers</label><br>
               <input type="number" min=1 max=255 id='charLimit'>
             </div>
 
             <input type="text" placeholder="Password" id='addPassword' name="newPass" >
-            <button id='generate'>Generate</button>
-            <button id='add'>Add</button>
+            <button id='generate'class="material-icons-two-tone">
+              create</button>
+            <button id='add' class="material-icons-round add-new-web">add_circle</button>
           </form>
         </article>
       </section>
@@ -79,7 +81,7 @@
                   <button id='copy' class="material-icons-two-tone">
                     content_copy</button>
                   <button id='edit' class="material-icons-two-tone">
-                    edit</button>
+                    build</button>
                   <button id='delete' class="material-icons-two-tone">
                     delete</button>
                 </form>
@@ -103,7 +105,7 @@
                   <button id='copy' class="material-icons-two-tone">
                     content_copy</button>
                   <button id='edit' class="material-icons-two-tone">
-                    edit</button>
+                    build</button>
                   <button id='delete' class="material-icons-two-tone">
                     delete</button>
                 </form>
@@ -127,7 +129,7 @@
                   <button id='copy' class="material-icons-two-tone">
                     content_copy</button>
                   <button id='edit' class="material-icons-two-tone">
-                    edit</button>
+                    build</button>
                   <button id='delete' class="material-icons-two-tone">
                     delete</button>
                 </form>
@@ -151,7 +153,7 @@
                   <button id='copy' class="material-icons-two-tone">
                     content_copy</button>
                   <button id='edit' class="material-icons-two-tone">
-                    edit</button>
+                    build</button>
                   <button id='delete' class="material-icons-two-tone">
                     delete</button>
                 </form>
