@@ -32,9 +32,9 @@
           <!-- New website form -->
           <form method="POST" action="/websites">
             <h2>New Password Form</h2>
-            <input type="text" placeholder="Website" id='addWebsite'>
-            <input type="text" placeholder="Username" id='addUsername'>
-            <input type="text" placeholder="Password" id='addPassword'>
+            <input type="text" placeholder="Website" name="newWebsite" id='addWebsite'>
+            <input type="text" placeholder="Username" name="newUsername" id='addUsername'>
+            <input type="text" placeholder="Password" name="newPass" id='addPassword'>
             <div id='passwordCriteria'>
               <input type="radio" id='uppercase' value='uppercase'>
               <label for="uppercase">Uppercase</label><br>
@@ -45,7 +45,7 @@
               <input type="radio" id="numbers" name="numbers" value="numbers">
               <label for="numbers">Numbers</label><br>
             </div>
-            <select>
+            <select name="newCategory">
               <option value="social" id='social'>Social</option>
               <option value="work" id='work'>Work</option>
               <option value="entertainment" id='entertainment'>Entertainment</option>
@@ -57,21 +57,23 @@
           </form>
         </article>
       </section>
-      <sections>
-        <article>
+      <section id="category">
+
           <!-- display website info -->
           <h2>Catagories</h2>
           <h2>Website Info</h2>
+          <article id="account">
           <h3>Username</h3> <!-- stretch to change username-->
-          <h3>Website</h3>
-          <form>
+          <h3 >Website</h3>
+
+          <form method="POST" action="/websites/26/delete">
             <h3 id='editPassword'>Password</h3> <!-- toggle or on hover (or the eye thing)-->
             <button id='copy'>Copy</button>
             <button id='edit'>Edit</button>
             <button id='delete'>Delete</button>
           </form>
         </article>
-      </sections>
+      </section>
       <aside id='filter'>
         <h2>sidebar</h2>
         <input type="radio" id='all' name='all' value='all'>
