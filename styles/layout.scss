@@ -2,7 +2,7 @@
 
 body {
   background-color: #EEE;
-
+  height: 100%;
   h1 {
     color: #244751;
   }
@@ -10,4 +10,21 @@ body {
 
 form {
   background-color: greenyellow;
+}
+
+main {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
+article {
+  display: flex;
+  justify-content: space-around;
+  background-color: coral;
+
+}
+.website-display {
+  width: 90%;
+  margin-left: 1rem;
 }

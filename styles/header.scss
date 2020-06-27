@@ -1,0 +1,53 @@
+$primary: cadetblue;
+
+header {
+  display: flex;
+  background-color: $primary;
+  justify-content: space-between;
+
+}
+
+.row-beside {
+  display: flex;
+  align-items: center;
+}
+
+.header-btn {
+  display: flex;
+  align-items: center;
+  margin-right: 1rem;
+}
+
+.userDisplay {
+  margin-right: 1rem;
+}
+
+#logo {
+  margin: 1rem;
+}
+
+// sidebar
+
+
+aside {
+  background-color: purple;
+
+}
+
+
+//New website form
+.new-website {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.url-info {
+  display: flex;
+  flex-direction: column;
+}
+
+#add {
+  display: flex;
+  align-self: flex-end;
+}

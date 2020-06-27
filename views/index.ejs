@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Home Page</title>
+  <title>PasswordKeepR</title>
 
   <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
   <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
@@ -16,25 +16,36 @@
 
 <body>
   <header>
-    <h1 id="logo">Logo</h1>
-    <div>
-      <p>Avatar</p>
-      <p>Name</p>
-      <p>Company</p>
+    <div class="row-beside">
+      <h1 id="logo">Logo</h1>
+      <div class="row-beside">
+        <div class="userDisplay">
+          <p>Name</p>
+          <p>Company</p>
+        </div>
+        <button id='logout'>Log Out</button>
+      </div>
     </div>
-    <div>
-      <button id='logout'>Log Out</button>
-      <button id='createPassword'>New Password</button>
+    <div class="header-btn">
+      <button id='createPassword'>Add Password</button>
     </div>
+  </header>
     <main>
-      <section>
+      <div class='website-display'>
+      <section> <!-- New website form -->
         <article>
-          <!-- New website form -->
-          <form method="POST" action="/websites">
-            <h2>New Password Form</h2>
-            <input type="text" placeholder="Website" name="newWebsite" id='addWebsite'>
-            <input type="text" placeholder="Username" name="newUsername" id='addUsername'>
-            <input type="text" placeholder="Password" name="newPass" id='addPassword'>
+          <!-- <h2>New Password Form</h2> -->
+          <form class="row-beside new-website" method="POST" action="/websites">
+            <div class='url-info'>
+              <input type="text" placeholder="Website" name="newWebsite" id='addWebsite'>
+              <input type="text" placeholder="Username"  name="newUsername" id='addUsername'>
+              <select name="newCategory">
+                <option value="social" id='social'>Social</option>
+                <option value="work" id='work'>Work</option>
+                <option value="entertainment" id='entertainment'>Entertainment</option>
+                <option value="others" id='others'>Others</option>
+              </select>
+            </div>
             <div id='passwordCriteria'>
               <input type="radio" id='uppercase' value='uppercase'>
               <label for="uppercase">Uppercase</label><br>
@@ -44,42 +55,49 @@
               <label for="specialCharacter">Special Characters</label><br>
               <input type="radio" id="numbers" name="numbers" value="numbers">
               <label for="numbers">Numbers</label><br>
+              <input type="number" min=1 max=255 id='charLimit'>
             </div>
-            <select name="newCategory">
-              <option value="social" id='social'>Social</option>
-              <option value="work" id='work'>Work</option>
-              <option value="entertainment" id='entertainment'>Entertainment</option>
-              <option value="others" id='others'>Others</option>
-            </select>
-            <input type="number" min=1 max=255 id='charLimit'>
+
+            <input type="text" placeholder="Password" id='addPassword' name="newPass" >
             <button id='generate'>Generate</button>
             <button id='add'>Add</button>
           </form>
         </article>
       </section>
-      <section id="category">
-
-          <!-- display website info -->
-          <h2>Catagories</h2>
-          <h2>Website Info</h2>
-          <section id="accountContainer">
-
-          </section>
+      <section id="category" <!-- display website info -->
+        <h2>Catagories</h2>
+        <article class="row-beside" id="accountContainer">
+          <div class="row-beside">
+            <h4>image</h4>
+            <div>
+              <h3>Website</h3>
+              <h3>Username</h3> <!-- stretch to change username-->
+            </div>
+         </div>
+         <form class="row-beside">
+           <h3 id='editPassword'>Password</h3> <!-- toggle or on hover (or the eye thing)-->
+           <button id='copy'>Copy</button>
+         </form>
+          <form>
+            <button id='edit'>Edit</button>
+            <button id='delete'>Delete</button>
+          </form>
         </article>
       </section>
-      <aside id='filter'>
-        <h2>sidebar</h2>
-        <input type="radio" id='all' name='all' value='all'>
-        <label for="all">All</label><br>
-        <input type="radio" id="social" name="social" value="social">
-        <label for="social">Social</label><br>
-        <input type="radio" id="other" name="entertainment" value="entertainment">
-        <label for="entertainment">Entertainment</label><br>
-        <input type="radio" id="work" name="work" value="work">
-        <label for="work">Work</label><br>
-      </aside>
+    </div>
+    <aside id='filter'> <!-- sidebar-->
+      <h2>sidebar</h2>
+      <input type="radio" id='all' name='all' value='all'>
+      <label for="all">All</label><br>
+      <input type="radio" id="social" name="social" value="social">
+      <label for="social">Social</label><br>
+      <input type="radio" id="other" name="entertainment" value="entertainment">
+      <label for="entertainment">Entertainment</label><br>
+      <input type="radio" id="work" name="work" value="work">
+      <label for="work">Work</label><br>
+    </aside>
+
     </main>
-  </header>
 </body>
 
 </html>
