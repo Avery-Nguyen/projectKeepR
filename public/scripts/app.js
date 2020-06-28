@@ -86,11 +86,8 @@ $(() => {
                 <h3>${accountData.username}</h3> <!-- stretch to change username-->
               </div>
               <div class="hover-website">
-                <form class="row-beside">
-                  <input type='text' class='column-under' id='editPassword' value='${accountData.password}'>
-                  <div>
-                    <input type="checkbox" id='show-password2'> Show Password
-                 </div>
+                <form class='row-beside'>
+                  <input type='text' id='editPassword' value='${accountData.password}'>
                 </form>
                 <form>
                 <button id='copy' class="material-icons-two-tone">content_copy</button>

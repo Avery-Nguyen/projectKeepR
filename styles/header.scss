@@ -8,6 +8,10 @@ header {
   background-color: $primary;
   justify-content: space-between;
   padding: 1rem;
+  position: fixed;
+  top: 0;
+  height: 130px;
+  width: 100%;
 }
 
 .row-beside {
