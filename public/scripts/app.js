@@ -60,14 +60,14 @@ $(() => {
         let password = ""
         let i = 0;
         const numOfChars = allChars.length;
-         while (i < passwordLength) {
-           password += allChars.charAt(Math.floor(Math.random() * numOfChars));
-           i++;
-         }
+        while (i < passwordLength) {
+          password += allChars.charAt(Math.floor(Math.random() * numOfChars));
+          i++;
+        }
         return password;
       }
 
-     $("#addPassword").val(passGenerator(passwordLength));
+      $("#addPassword").val(passGenerator(passwordLength));
     })
   })
 
@@ -77,34 +77,27 @@ $(() => {
 
   const createAccountElement = (accountData) => {
     const $account = $(`
-       <article class="arrange-website" id="accountContainer">
-       <section class="account">
-       <img class ='website-img'src='https://www.clipartmax.com/png/middle/223-2237244_download-facebook-logo-free-png-transparent-image-and-find-us-on-facebook.png'>
-       <div class="row-beside website-info">
-       <div>
-        <h3>${accountData.url}</h3>
-        <h3>${accountData.username}</h3> <!-- stretch to change username-->
-       </div>
-       <div class="hover-website">
-      <form class="row-beside">
-        <h3 id='editPassword'>ben&jerry'srocks</h3> <!-- toggle or on hover (or the eye thing)-->
-      </form>
-      <form class="row-beside">
-        <h3 id='editPassword'>${accountData.password}</h3> <!-- toggle or on hover (or the eye thing)-->
-        <button id='copy' class="material-icons-two-tone copy">
-      </form>
-       <form>
-       <button class="material-icons-two-tone copy">
-       content_copy</button>
-     <button class="material-icons-two-tone edit">
-       build</button>
-     <button class="material-icons-two-tone delete">
-       delete</button>
-       </form>
-       </div>
-       </div>
-     </section>
-     </article>
+      <article class="arrange-website" id="accountContainer">
+        <section class="account">
+          <img class ='website-img'src='https://www.clipartmax.com/png/middle/223-2237244_download-facebook-logo-free-png-transparent-image-and-find-us-on-facebook.png'>
+            <div class="row-beside website-info">
+              <div>
+                <h3>${accountData.url}</h3>
+                <h3>${accountData.username}</h3> <!-- stretch to change username-->
+              </div>
+              <div class="hover-website">
+                <form class="row-beside">
+                  <h3 id='editPassword'>${accountData.password}</h3> <!-- toggle or on hover (or the eye thing)-->
+                </form>
+                <form>
+                <button id='copy' class="material-icons-two-tone">content_copy</button>
+                <button id='edit' class="material-icons-two-tone">build</button>
+                <button id='delete' class="material-icons-two-tone">delete</button>
+                </form>
+              </div>
+            </div>
+        </section>
+      </article>
           `)
 
     return $account;
@@ -128,9 +121,16 @@ $(() => {
           } else {
             console.log('invalid category')
           }
+          $(".arrange-website").hover(function() {
+            $(this).find(".hover-website").show();
+          },
+          function() {
+            $(this).find(".hover-website").hide();
+          });
         }
-
       }
+
+
     }
 
     const loadAccounts = () => {
@@ -145,10 +145,14 @@ $(() => {
     }
 
     loadAccounts();
+
+
+
   }
 
-  getAccounts();
 
+
+  getAccounts();
 
 
 });
