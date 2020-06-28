@@ -81,7 +81,7 @@ $(() => {
         <section class="account">
           <img class ='website-img'src='https://www.clipartmax.com/png/middle/223-2237244_download-facebook-logo-free-png-transparent-image-and-find-us-on-facebook.png'>
             <div class="row-beside website-info">
-              <div>
+              <div class='url-username-display'>
                 <h3>${accountData.url}</h3>
                 <h3>${accountData.username}</h3> <!-- stretch to change username-->
               </div>
