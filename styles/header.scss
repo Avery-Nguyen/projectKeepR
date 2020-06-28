@@ -53,9 +53,8 @@ header {
 }
 
 // website display
-#category {
+.categories{
   display: flex;
-  flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-around;
 }
@@ -85,6 +84,11 @@ header {
   height: 50px;
   width: 50px;
   margin: auto;
+}
+
+.align {
+ background-color: #2195f2;
+ padding: 0.25rem;
 }
 
  // New website Form
