@@ -35,7 +35,7 @@
       <section> <!-- New website form -->
         <article>
           <!-- <h2>New Password Form</h2> -->
-          <form class="row-beside new-website" method="POST" action="/websites">
+          <form class="row-beside new-website" method="POST" action="/websites" id="newAccount">
             <div class='url-info'>
               <input type="text" placeholder="Website" name="newWebsite" id='addWebsite'>
               <input type="text" placeholder="Username"  name="newUsername" id='addUsername'>
@@ -43,7 +43,7 @@
                 <option value="social" id='social'>Social</option>
                 <option value="work" id='work'>Work</option>
                 <option value="entertainment" id='entertainment'>Entertainment</option>
-                <option value="others" id='others'>Others</option>
+                <option value="other" id='other'>Other</option>
               </select>
             </div>
             <div id='passwordCriteria'>
@@ -64,120 +64,22 @@
           </form>
         </article>
       </section>
-      <section id="category"> <!-- display website info -->
-        <h2>Catagories</h2>
-        <article class="row-beside" id="accountContainer" style="display: flex; flex-direction: column;">
-          <section class="account" style="margin: 5vh 0; border: 2px solid black">
-            <div class="row-beside">
+      <section id="category" style="display: flex; flex-direction: column;">
+       <!-- display website info -->
+        <div id="socialSection" class="row-beside account" style="display: flex; flex-direction: column; background-color: coral;">
+        <h2>Social</h2>
+        </div>
+        <div id="workSection" class="row-beside" style="display: flex; flex-direction: column; background-color: coral;">
+        <h2>Work</h2>
 
-              <h4>image</h4>
-              <div>
-                <h3>facebook.com</h3>
-                <h3>chunkey_monkey</h3> <!-- stretch to change username-->
-              </div>
-           </div>
-           <form class="row-beside">
-             <h3 id='editPassword'>ben&jerry'srocks</h3> <!-- toggle or on hover (or the eye thing)-->
-             <button id='copy'>Copy</button>
-           </form>
-            <form>
-              <button id='edit'>Edit</button>
-              <button id='delete'>Delete</button>
-            </form>
-          </section>
-          <section class="account" style="margin: 5vh 0; border: 2px solid black">
-            <div class="row-beside">
+        </div>
+        <div id="entertainmentSection" class="row-beside" style="display: flex; flex-direction: column; background-color: coral;">
+        <h2>Entertainment</h2>
 
-              <h4>image</h4>
-              <div>
-                <h3>facebook.com</h3>
-                <h3>chunkey_monkey</h3> <!-- stretch to change username-->
-              </div>
-           </div>
-           <form class="row-beside">
-             <h3 id='editPassword'>ben&jerry'srocks</h3> <!-- toggle or on hover (or the eye thing)-->
-             <button id='copy'>Copy</button>
-           </form>
-            <form>
-              <button id='edit'>Edit</button>
-              <button id='delete'>Delete</button>
-            </form>
-          </section>
-          <section class="account" style="margin: 5vh 0; border: 2px solid black">
-            <div class="row-beside">
-
-              <h4>image</h4>
-              <div>
-                <h3>facebook.com</h3>
-                <h3>chunkey_monkey</h3> <!-- stretch to change username-->
-              </div>
-           </div>
-           <form class="row-beside">
-             <h3 id='editPassword'>ben&jerry'srocks</h3> <!-- toggle or on hover (or the eye thing)-->
-             <button id='copy'>Copy</button>
-           </form>
-            <form>
-              <button id='edit'>Edit</button>
-              <button id='delete'>Delete</button>
-            </form>
-          </section>
-          <section class="account" style="margin: 5vh 0; border: 2px solid black">
-            <div class="row-beside">
-
-              <h4>image</h4>
-              <div>
-                <h3>facebook.com</h3>
-                <h3>chunkey_monkey</h3> <!-- stretch to change username-->
-              </div>
-           </div>
-           <form class="row-beside">
-             <h3 id='editPassword'>ben&jerry'srocks</h3> <!-- toggle or on hover (or the eye thing)-->
-             <button id='copy'>Copy</button>
-           </form>
-            <form>
-              <button id='edit'>Edit</button>
-              <button id='delete'>Delete</button>
-            </form>
-          </section>
-          <section class="account" style="margin: 5vh 0; border: 2px solid black">
-            <div class="row-beside">
-
-              <h4>image</h4>
-              <div>
-                <h3>facebook.com</h3>
-                <h3>chunkey_monkey</h3> <!-- stretch to change username-->
-              </div>
-           </div>
-           <form class="row-beside">
-             <h3 id='editPassword'>ben&jerry'srocks</h3> <!-- toggle or on hover (or the eye thing)-->
-             <button id='copy'>Copy</button>
-           </form>
-            <form>
-              <button id='edit'>Edit</button>
-              <button id='delete'>Delete</button>
-            </form>
-          </section>
-          <section class="account" style="margin: 5vh 0; border: 2px solid black">
-            <div class="row-beside">
-
-              <h4>image</h4>
-              <div>
-                <h3>facebook.com</h3>
-                <h3>chunkey_monkey</h3> <!-- stretch to change username-->
-              </div>
-           </div>
-           <form class="row-beside">
-             <h3 id='editPassword'>ben&jerry'srocks</h3> <!-- toggle or on hover (or the eye thing)-->
-             <button id='copy'>Copy</button>
-           </form>
-            <form>
-              <button id='edit'>Edit</button>
-              <button id='delete'>Delete</button>
-            </form>
-          </section>
-        </article>
-      </section>
-        </article>
+        </div>
+        <div id="otherSection" class="row-beside" style="display: flex; flex-direction: column; background-color: coral;">
+        <h2>Other</h2>
+        </div>
       </section>
 
     </div>
