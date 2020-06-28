@@ -52,11 +52,6 @@ $(() => {
           console.log("Please select at least one parameter");
         }
 
-        function getRandomBetween(min, max) {
-          return Math.floor(Math.random() * (max - min + 1) + min);
-        }
-        let randomNum = getRandomBetween(1, num)
-
         let password = ""
         let i = 0;
         const numOfChars = allChars.length;
@@ -71,26 +66,22 @@ $(() => {
     })
   })
 
-
-
-
-
   const createAccountElement = (accountData) => {
     const $account = $(`
       <article class="arrange-website" id="accountContainer">
         <section class="account">
           <img class ='website-img'src='https://www.clipartmax.com/png/middle/223-2237244_download-facebook-logo-free-png-transparent-image-and-find-us-on-facebook.png'>
-            <div class="row-beside website-info">
+            <div class="row-beside website-info copy-to-clipboard">
               <div>
                 <h3>${accountData.url}</h3>
-                <h3>${accountData.username}</h3> <!-- stretch to change username-->
+                <h3 >${accountData.username}</h3> <!-- stretch to change username-->
               </div>
               <div class="hover-website">
                 <form class="row-beside">
                   <h3 id='editPassword'>${accountData.password}</h3> <!-- toggle or on hover (or the eye thing)-->
                 </form>
                 <form>
-                <button id='copy' class="material-icons-two-tone">content_copy</button>
+                <button id='copy' class="material-icons-two-tone copy">content_copy</button>
                 <button id='edit' class="material-icons-two-tone">build</button>
                 <button id='delete' class="material-icons-two-tone">delete</button>
                 </form>
@@ -123,10 +114,19 @@ $(() => {
           }
           $(".arrange-website").hover(function() {
             $(this).find(".hover-website").show();
+            $(".copy").click((event) => {
+              event.preventDefault(event);
+              console.log("clicked")
+            })
           },
           function() {
             $(this).find(".hover-website").hide();
           });
+
+
+
+
+
         }
       }
 
@@ -153,6 +153,8 @@ $(() => {
 
 
   getAccounts();
+
+
 
 
 });
