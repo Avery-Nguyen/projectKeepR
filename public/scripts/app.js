@@ -87,7 +87,10 @@ $(() => {
               </div>
               <div class="hover-website">
                 <form class="row-beside">
-                  <h3 id='editPassword'>${accountData.password}</h3> <!-- toggle or on hover (or the eye thing)-->
+                  <input type='text' class='column-under' id='editPassword' value='${accountData.password}'>
+                  <div>
+                    <input type="checkbox" id='show-password2'> Show Password
+                 </div>
                 </form>
                 <form>
                 <button id='copy' class="material-icons-two-tone">content_copy</button>
