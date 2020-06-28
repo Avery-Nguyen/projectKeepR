@@ -1,7 +1,7 @@
 $primary: #0069c0;
-$sidebarColor: #cfd8dc;
+$sidebarColor: #4f5b62;
 $formColor: #cfd8dc;
-$websiteDisplay: #6ec6ff;
+$websiteDisplay: #0069c0;
 
 header {
   display: flex;
@@ -56,11 +56,15 @@ header {
 }
 
  // New website Form
+ .new-website-form {
+   display: none;
+ }
  .new-website {
   display: flex;
   justify-content: space-around;
   padding: 1rem;
   background-color: $formColor;
+  margin-top: 1rem;
 }
 
 .url-info {
@@ -94,9 +98,23 @@ header {
 // Sidebar
 
 aside {
+  display: none;
   background-color: $sidebarColor;
-  width: 15%;
+  width: 200px;
+  padding: 1rem;
+  font-size: 20px;
+
+  span:hover {
+    color: #f1f1f1;
+  }
 }
+
+#filter-symbol {
+  font-size: 60px;
+}
+
+
+
 
 //add password button
 #addBtn {

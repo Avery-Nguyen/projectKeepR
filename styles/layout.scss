@@ -1,7 +1,7 @@
 // See: https://sass-lang.com/
-$backgroundColor:#eceff1;
+$backgroundColor:#6ec6ff;
 // font-family: 'Roboto Mono', monospace;
-$primaryFontColor: #263238;
+$primaryFontColor: #000a12;
 $secondaryFontColor: #4f5b62;
 
 body {
@@ -34,4 +34,8 @@ article {
 .website-display {
   width: 90%;
   margin-left: 1rem;
+}
+
+.logo {
+  font-size: 100px;
 }

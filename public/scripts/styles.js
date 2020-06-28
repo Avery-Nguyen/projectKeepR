@@ -5,5 +5,8 @@ $( document ).ready(function() {
     // $('#tweet-text').focus();
   });
 
+  $('#filter-symbol').click(function() {
+    $('aside').toggle('slow');
+  });
 
 });
