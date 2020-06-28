@@ -9,6 +9,10 @@ $( document ).ready(function() {
     $('aside').toggle('slow');
   });
 
+  $('#addBtn').click(function() {
+    $('#addWebsite').focus();
+  });
+
   // const hover = () => {
   //   $(".arrange-website").hover(function() {
   //     $(this).find(".hover-website").show();
