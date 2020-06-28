@@ -9,4 +9,11 @@ $( document ).ready(function() {
     $('aside').toggle('slow');
   });
 
+  $(".arrange-website").hover(function() {
+    $(this).find(".hover-website").show();
+  },
+  function() {
+    $(this).find(".hover-website").hide();
+  });
+
 });
