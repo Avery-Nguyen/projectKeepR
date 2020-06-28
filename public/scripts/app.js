@@ -52,11 +52,6 @@ $(() => {
           console.log("Please select at least one parameter");
         }
 
-        function getRandomBetween(min, max) {
-          return Math.floor(Math.random() * (max - min + 1) + min);
-        }
-        let randomNum = getRandomBetween(1, num)
-
         let password = ""
         let i = 0;
         const numOfChars = allChars.length;
@@ -71,29 +66,26 @@ $(() => {
     })
   })
 
-
-
-
-
   const createAccountElement = (accountData) => {
     const $account = $(`
       <article class="arrange-website" id="accountContainer">
         <section class="account">
           <img class ='website-img'src='https://www.clipartmax.com/png/middle/223-2237244_download-facebook-logo-free-png-transparent-image-and-find-us-on-facebook.png'>
             <div class="row-beside website-info">
-              <div class='url-username-display'>
+            <div class='url-username-display'>
                 <h3>${accountData.url}</h3>
-                <h3>${accountData.username}</h3> <!-- stretch to change username-->
+                <h3 >${accountData.username}</h3> <!-- stretch to change username-->
               </div>
               <div class="hover-website">
                 <form class='row-beside'>
                   <input type='text' id='editPassword' value='${accountData.password}'>
                 </form>
                 <form>
-                <button id='copy' class="material-icons-two-tone">content_copy</button>
+                <button id='copy' class="material-icons-two-tone copy">content_copy</button>
                 <button id='edit' class="material-icons-two-tone">build</button>
                 <button id='delete' class="material-icons-two-tone">delete</button>
                 </form>
+              </div>
               </div>
             </div>
         </section>
@@ -121,14 +113,26 @@ $(() => {
           } else {
             console.log('invalid category')
           }
+
           $(".arrange-website").hover(function() {
             $(this).find(".hover-website").show();
+            $(this).find("#copy").click( function(event) {
+              event.preventDefault(event);
+            const passwordField = $(this).parent().parent().find("#editPassword");
+            passwordField.select();
+              document.execCommand("copy");
+            })
+
           },
           function() {
             $(this).find(".hover-website").hide();
           });
+
+
         }
+
       }
+
 
 
     }
@@ -153,6 +157,8 @@ $(() => {
 
 
   getAccounts();
+
+
 
 
 });
