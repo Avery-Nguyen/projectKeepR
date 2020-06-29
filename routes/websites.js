@@ -8,7 +8,7 @@ module.exports = (db) => {
       INSERT INTO websites (user_id, url, password, username, category)
       VALUES ($1, $2, $3, $4, $5)
       returning *
-      ;`, [req.cookies.user, req.body.newWebsite, req.body.newPass, req.body.newUsername, req.body.newCategory])
+      ;`, [req.cookies.user_id, req.body.newWebsite, req.body.newPass, req.body.newUsername, req.body.newCategory])
       .then(() => {
         res.redirect('/');
       }).catch(err => {
@@ -17,9 +17,18 @@ module.exports = (db) => {
   });
 
   router.get("/", (req, res) => {
-    let query = `SELECT * FROM websites`;
+    const query = `
+    SELECT *
+    FROM websites
+    WHERE websites.user_id = $1 OR websites.organization_id = (
+                                                                SELECT organization_id
+                                                                FROM users
+                                                                WHERE id = $1
+                                                              );
+    `;
+    const value = [req.cookies.user_id];
     console.log(query);
-    db.query(query)
+    db.query(query, value)
       .then(data => {
         const websites = data.rows;
         res.json({ websites });

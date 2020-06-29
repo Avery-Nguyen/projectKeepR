@@ -57,7 +57,10 @@ app.use("/websites/:id", editPassRoutes(db));
 // Separate them into separate routes files (see above).
 app.get('/login/:id', (req, res) => {
   res.cookie('user_id',req.params.id);
-  // console.log("req.params.id", req.params.id)
+  res.redirect('/');
+});
+
+app.get("/", (req, res) => {
   db.query(`
   SELECT users.id AS id, users.name AS name, organizations.name AS organization
   FROM users
@@ -65,7 +68,7 @@ app.get('/login/:id', (req, res) => {
   `)
       .then((data) => {
         const users = data.rows;
-        const id = req.params.id;
+        const id = req.cookies.user_id;
         return res.render('index', {users, id})
       })
       .catch(err => {
@@ -73,12 +76,6 @@ app.get('/login/:id', (req, res) => {
           .status(500)
           .json({ error: err.message });
       });
-});
-
-app.get("/", (req, res) => {
-  const users = [{id:1, name: 'Bob'}];
-  const id = 1;
-  res.render("index",{users, id});
 });
 
 app.listen(PORT, () => {
