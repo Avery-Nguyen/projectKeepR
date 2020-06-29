@@ -77,18 +77,22 @@ $(() => {
                 <h3 >${accountData.username}</h3> <!-- stretch to change username-->
               </div>
               <div class="hover-website">
-                <form class='row-beside'>
-                  <input type='text' id='editPassword' name='editPassword' value='${accountData.password}'>
+                <form id="editPass" class='row-beside' method="post" action="/websites/${accountData.id}">
+                  <input type='text' id='editPassword' name='editPass' value='${accountData.password}'>
+                  <button id='copy' class="material-icons-two-tone copy">content_copy</button>
+                  <button id='edit' class="material-icons-two-tone">build</button>
                 </form>
-                <form>
-                <button id='copy' class="material-icons-two-tone copy">content_copy</button>
-                <button id='edit' class="material-icons-two-tone">build</button>
+                <form action="/websites/${accountData.id}/delete" method="POST">
                 <button id='delete' class="material-icons-two-tone">delete</button>
                 </form>
               </div>
               </div>
             </div>
+
         </section>
+        <div id="copiedAlert" style="border: 2px black solid; height: 50px; margin-top: 16px">
+        <p>Copied to clipboard!</p>
+        </div>
       </article>
           `)
 
@@ -121,20 +125,19 @@ $(() => {
             const passwordField = $(this).parent().parent().find("#editPassword");
             passwordField.select();
               document.execCommand("copy");
-            })
-
+              alert("copied")
+            });
           },
           function() {
             $(this).find(".hover-website").hide();
           });
-
-
         }
-
       }
 
-
-
+      $(this).find("#edit").click(function (event) {
+        event.preventDefault(event);
+        $.post( `/websites/${accounts[account][acc].id}`, $( "#editPassword" ).serialize());
+      });
     }
 
     const loadAccounts = () => {
