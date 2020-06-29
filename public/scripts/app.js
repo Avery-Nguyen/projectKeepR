@@ -78,7 +78,7 @@ $(() => {
               </div>
               <div class="hover-website">
                 <form class='row-beside'>
-                  <input type='text' id='editPassword' value='${accountData.password}'>
+                  <input type='text' id='editPassword' name='editPassword' value='${accountData.password}'>
                 </form>
                 <form>
                 <button id='copy' class="material-icons-two-tone copy">content_copy</button>

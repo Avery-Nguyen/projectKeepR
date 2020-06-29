@@ -52,11 +52,28 @@ app.use("/websites/:id/delete", deleteWebsiteRoutes(db))
 // Separate them into separate routes files (see above).
 app.get('/login/:id', (req, res) => {
   req.cookies.user = req.params.id;
-  res.redirect('/')
+  db.query(`
+  SELECT users.id AS id, users.name AS name, organizations.name AS organization
+  FROM users
+  JOIN organizations ON organizations.id = organization_id;
+  `)
+      .then(data => {
+        const users = data.rows;
+        console.log("users>>>>", users)
+        const id = req.params.id;
+        res.render('index', {users, id})
+      })
+      .catch(err => {
+        res
+          .status(500)
+          .json({ error: err.message });
+      });
 });
 
 app.get("/", (req, res) => {
-  res.render("index",);
+  const users = [{id:1, name: 'Bob'}];
+  const id = 1;
+  res.render("index",{users, id});
 });
 
 app.listen(PORT, () => {
