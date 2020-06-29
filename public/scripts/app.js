@@ -88,7 +88,11 @@ $(() => {
               </div>
               </div>
             </div>
+
         </section>
+        <div id="copiedAlert" style="border: 2px black solid; height: 50px; margin-top: 16px">
+        <p>Copied to clipboard!</p>
+        </div>
       </article>
           `)
 
@@ -100,7 +104,6 @@ $(() => {
     const renderAccounts = (accounts) => {
       for (const account in accounts) {
         for (const acc in account) {
-          console.log(accounts[account][acc])
           const category = accounts[account][acc].category;
           const $account = createAccountElement(accounts[account][acc]);
           if (category === 'social') {
@@ -124,22 +127,17 @@ $(() => {
               document.execCommand("copy");
               alert("copied")
             });
-
           },
           function() {
             $(this).find(".hover-website").hide();
           });
-
-
         }
-
       }
 
       $(this).find("#edit").click(function (event) {
         event.preventDefault(event);
         $.post( `/websites/${accounts[account][acc].id}`, $( "#editPassword" ).serialize());
-      })
-
+      });
     }
 
     const loadAccounts = () => {
