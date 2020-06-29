@@ -46,8 +46,9 @@ const editPassRoutes = require("./routes/editPass")
 // Note: Feel free to replace the example routes below with your own
 app.use("/users", usersRoutes(db));
 app.use("/websites", websitesRoutes(db));
-app.use("/websites/:id/delete", deleteWebsiteRoutes(db))
-app.use("/websites/:id", editPassRoutes(db))
+app.use("/websites/:id/delete", deleteWebsiteRoutes(db));
+app.use("/websites/:id", editPassRoutes(db));
+
 // Note: mount other resources here, using the same pattern above
 
 
@@ -55,17 +56,17 @@ app.use("/websites/:id", editPassRoutes(db))
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
 app.get('/login/:id', (req, res) => {
-  req.cookies.user = req.params.id;
+  res.cookie('user_id',req.params.id);
+  // console.log("req.params.id", req.params.id)
   db.query(`
   SELECT users.id AS id, users.name AS name, organizations.name AS organization
   FROM users
   JOIN organizations ON organizations.id = organization_id;
   `)
-      .then(data => {
+      .then((data) => {
         const users = data.rows;
-        console.log("users>>>>", users)
         const id = req.params.id;
-        res.render('index', {users, id})
+        return res.render('index', {users, id})
       })
       .catch(err => {
         res
