@@ -68,37 +68,37 @@ $(() => {
 
   const createAccountElement = (accountData) => {
     const $account = $(`
-      <article class="arrange-website" id="accountContainer">
-        <section class="account">
-          <img class ='website-img'src='https://www.clipartmax.com/png/middle/223-2237244_download-facebook-logo-free-png-transparent-image-and-find-us-on-facebook.png'>
-            <div class="row-beside website-info">
-            <div class='url-username-display'>
-                <h3>${accountData.url}</h3>
-                <h3 >${accountData.username}</h3> <!-- stretch to change username-->
+    <article class="arrange-website" id="accountContainer">
+      <section class="account">
+        <img class ='website-img'src='https://www.clipartmax.com/png/middle/223-2237244_download-facebook-logo-free-png-transparent-image-and-find-us-on-facebook.png'>
+          <div class="row-beside website-info">
+          <div class='url-username-display'>
+              <h3>${accountData.url}</h3>
+              <h3 >${accountData.username}</h3> <!-- stretch to change username-->
+            </div>
+            <div class="hover-website left-flex">
+              <input class='text' type='text' id='editPassword' name='editPass' value='${accountData.password}'>
+              <div id="copiedAlert" class="hidden" style="border: 2px black solid; height: 50px; margin-top: 16px">
+                <p>Copied to clipboard!</p>
               </div>
-              <div class="hover-website left-flex">
-                <input class='text' type='text' id='editPassword' name='editPass' value='${accountData.password}'>
-                <div class='row-beside'>
-                <div>
-                  <button id='copy' class="material-icons-two-tone copy btn-design">content_copy</button>
-                </div>
-                <form id="editPass" class='row-beside' method="post" action="/websites/${accountData.id}">
-                  <button id='edit' class="material-icons-two-tone btn-design">build</button>
-                </form>
-                <form action="/websites/${accountData.id}/delete" method="POST">
-                  <button id='delete' class="material-icons-two-tone btn-design">delete</button>
-                </form>
-                </div>
+              <div class='row-beside'>
+              <div>
+                <button id='copy' class="material-icons-two-tone copy btn-design">content_copy</button>
               </div>
+              <form id="editPass" class='row-beside' method="post" action="/websites/${accountData.id}">
+                <button id='edit' class="material-icons-two-tone btn-design">build</button>
+              </form>
+              <form action="/websites/${accountData.id}/delete" method="POST">
+                <button id='delete' class="material-icons-two-tone btn-design">delete</button>
+              </form>
               </div>
             </div>
+            </div>
+          </div>
 
-        </section>
-        <div id="copiedAlert" style="border: 2px black solid; height: 50px; margin-top: 16px">
-        <p>Copied to clipboard!</p>
-        </div>
-      </article>
-          `)
+      </section>
+    </article>
+        `)
 
     return $account;
 
@@ -126,21 +126,27 @@ $(() => {
             $(this).find(".hover-website").show();
             $(this).find("#copy").click( function(event) {
               event.preventDefault(event);
-            const passwordField = $(this).parent().parent().find("#editPassword");
+            const passwordField = $(this).parent().parent().parent().find("#editPassword");
             passwordField.select();
-              document.execCommand("copy");
 
-            });
+            document.execCommand("copy");
+            $(this).parent().parent().parent().find("#copiedAlert").show();
+            })
+
           },
           function() {
             $(this).find(".hover-website").hide();
+
+              $(this).parent().parent().parent().find("#copiedAlert").hide()
+
           });
         }
       }
 
       $(this).find("#edit").click(function (event) {
         event.preventDefault(event);
-        $.post( `/websites/${accounts[account][acc].id}`, $( "#editPassword" ).serialize());
+        $.post( `/websites/${accounts[account][acc].id}`, $( "#editPass" ).serialize());
+
       });
     }
 
