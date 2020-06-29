@@ -106,8 +106,16 @@ $(() => {
 
   const getAccounts = () => {
     const renderAccounts = (accounts) => {
+    console.log("renderAccounts -> accounts", accounts)
+    console.log("renderAccounts -> accounts.websites.length", accounts.websites.length) //11 this is correct
+
       for (const account in accounts) {
+      console.log("renderAccounts -> account", typeof account)
+      console.log("renderAccounts -> account.length", account.length) // always stopping at 8 here
+
         for (const acc in account) {
+        console.log("renderAccounts -> acc", acc)
+
           const category = accounts[account][acc].category;
           const $account = createAccountElement(accounts[account][acc]);
           if (category === 'social') {
