@@ -106,18 +106,11 @@ $(() => {
 
   const getAccounts = () => {
     const renderAccounts = (accounts) => {
-    console.log("renderAccounts -> accounts", accounts)
-    console.log("renderAccounts -> accounts.websites.length", accounts.websites.length) //11 this is correct
-
-      for (const account in accounts) {
-      console.log("renderAccounts -> account", typeof account)
-      console.log("renderAccounts -> account.length", account.length) // always stopping at 8 here
-
-        for (const acc in account) {
-        console.log("renderAccounts -> acc", acc)
-
-          const category = accounts[account][acc].category;
-          const $account = createAccountElement(accounts[account][acc]);
+      console.log(typeof accounts.websites); //the array of objects
+      for (const account of accounts.websites) {
+        console.log(account);
+                  const category = account.category; //selects category value
+          const $account = createAccountElement(account); //takes in the object and feeds it to the function to render templates
           if (category === 'social') {
             $('#socialSection').append($account)
           } else if (category === 'work') {
@@ -129,27 +122,25 @@ $(() => {
           } else {
             console.log('invalid category')
           }
-
           $(".arrange-website").hover(function() {
-            $(this).find(".hover-website").show();
-            $(this).find("#copy").click( function(event) {
-              event.preventDefault(event);
-            const passwordField = $(this).parent().parent().parent().find("#editPassword");
-            passwordField.select();
+                $(this).find(".hover-website").show();
+                $(this).find("#copy").click( function(event) {
+                  event.preventDefault(event);
+                const passwordField = $(this).parent().parent().parent().find("#editPassword");
+                passwordField.select();
 
-            document.execCommand("copy");
-            $(this).parent().parent().parent().find("#copiedAlert").show();
-            })
+                document.execCommand("copy");
+                $(this).parent().parent().parent().find("#copiedAlert").show();
+                })
 
-          },
-          function() {
-            $(this).find(".hover-website").hide();
+              },
+              function() {
+                $(this).find(".hover-website").hide();
 
-              $(this).parent().parent().parent().find("#copiedAlert").hide()
+                  $(this).parent().parent().parent().find("#copiedAlert").hide()
 
-          });
-        }
-      }
+              });
+      };
 
       $(this).find("#edit").click(function (event) {
         event.preventDefault(event);
