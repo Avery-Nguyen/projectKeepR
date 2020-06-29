@@ -2,27 +2,18 @@ $( document ).ready(function() {
 
   $('#addBtn').click(function() {
     $('.new-website-form').toggle('slow');
-    // $('#tweet-text').focus();
+    $('#addWebsite').focus();
+  });
+
+  $('#cancel').click(function(event) {
+    event.preventDefault(event);
+    $('.new-website-form').toggle('slow');
   });
 
   $('#filter-symbol').click(function() {
     $('aside').toggle('slow');
   });
 
-  $('#addBtn').click(function() {
-    $('#addWebsite').focus();
-  });
-
-  // const hover = () => {
-  //   $(".arrange-website").hover(function() {
-  //     $(this).find(".hover-website").show();
-  //   },
-  //   function() {
-  //     $(this).find(".hover-website").hide();
-  //   });
-  // }
-
-  // hover();
 
   $('#show-password').click(function(){
     const x = document.getElementById("addPassword");

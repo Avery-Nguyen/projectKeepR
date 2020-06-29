@@ -40,7 +40,7 @@ header {
 }
 
 #logout {
-  background-color: #4CAF50; /* Green */
+  background-color: #4CAF50;
   border: none;
   color: white;
   padding: 16px 32px;
@@ -80,13 +80,14 @@ header {
   background-color: $websiteDisplay;
   box-shadow: 5px 5px 10px #888888;
   margin: 1rem;
-
+  border-radius: 5px;
 }
 
 .website-info {
   display: flex;
   justify-content: space-between;
   background-color: #ffffff;
+  border-radius: 5px;
 }
 
 .website-img {
@@ -130,27 +131,37 @@ header {
   padding: 0.5rem;
 }
 
-.add-new-web {
+.new-form-btn{
   border: none;
   outline: none;
   background-color: Transparent;
-  color: red;
   transition-duration: 0.4s;
+  display: flex;
+  align-self: flex-end;
 }
 
-.add-new-web:hover {
+#add {
+  color: $primary;
+}
+
+#add:hover {
   color: #4CAF50;
 }
+
+#cancel {
+  color: $primary;
+}
+
+#cancel:hover {
+  color: red;
+}
+
 .radio {
   padding: 1rem;
 }
 
 #passwordCriteria {
   padding: 1rem;
-}
-#add {
-  display: flex;
-  align-self: flex-end;
 }
 
 #addPassword {
