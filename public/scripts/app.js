@@ -79,6 +79,9 @@ $(() => {
               <div class="hover-website">
                 <form id="editPass" class='row-beside' method="post" action="/websites/${accountData.id}">
                   <input type='text' id='editPassword' name='editPass' value='${accountData.password}'>
+                  <div id="copiedAlert" style="border: 2px white solid; height: 50px; margin-top: 16px; padding: 0 5px;">
+                   <p>Copied to clipboard!</p>
+                  </div>
                   <button id='copy' class="material-icons-two-tone copy">content_copy</button>
                   <button id='edit' class="material-icons-two-tone">build</button>
                 </form>
@@ -90,9 +93,6 @@ $(() => {
             </div>
 
         </section>
-        <div id="copiedAlert" style="border: 2px black solid; height: 50px; margin-top: 16px">
-        <p>Copied to clipboard!</p>
-        </div>
       </article>
           `)
 
@@ -124,12 +124,15 @@ $(() => {
               event.preventDefault(event);
             const passwordField = $(this).parent().parent().find("#editPassword");
             passwordField.select();
-              document.execCommand("copy");
-              alert("copied")
-            });
+            document.execCommand("copy");
+            $(this).parent().parent().parent().parent().parent().find("#copiedAlert").show();
+            })
           },
           function() {
             $(this).find(".hover-website").hide();
+
+              $(this).parent().parent().parent().parent().parent().find("#copiedAlert").hide()
+
           });
         }
       }
@@ -137,6 +140,7 @@ $(() => {
       $(this).find("#edit").click(function (event) {
         event.preventDefault(event);
         $.post( `/websites/${accounts[account][acc].id}`, $( "#editPassword" ).serialize());
+
       });
     }
 
