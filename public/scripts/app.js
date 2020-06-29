@@ -78,7 +78,7 @@ $(() => {
               </div>
               <div class="hover-website">
                 <form id="editPass" class='row-beside' method="post" action="/websites/${accountData.id}">
-                  <input type='text' id='editPassword' name='editPass' value='${accountData.password}'>
+                  <input class='text' type='text' id='editPassword' name='editPass' value='${accountData.password}'>
                   <button id='copy' class="material-icons-two-tone copy">content_copy</button>
                   <button id='edit' class="material-icons-two-tone">build</button>
                 </form>

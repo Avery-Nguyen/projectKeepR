@@ -38,9 +38,9 @@
           <!-- <h2>New Password Form</h2> -->
           <form class="row-beside new-website" method="POST" action="/websites" id="newAccount">
             <div class='url-info'>
-              <input type="text" placeholder="Website" name="newWebsite" id='addWebsite'><br>
-              <input type="text" placeholder="Username"  name="newUsername" id='addUsername'><br>
-              <select name="newCategory">
+              <input class='text' type="text" placeholder="Website" name="newWebsite" id='addWebsite'><br>
+              <input class='text' type="text" placeholder="Username"  name="newUsername" id='addUsername'><br>
+              <select class='text' name="newCategory">
                 <option value="social" id='social'>Social</option>
                 <option value="work" id='work'>Work</option>
                 <option value="entertainment" id='entertainment'>Entertainment</option>
@@ -56,10 +56,10 @@
               <label for="specialCharacter">Special Characters</label><br>
               <input type="radio" class='radio' id="numbers" name="numbers" value="numbers">
               <label for="numbers">Numbers</label><br>
-              <input type="number" min=1 max=255 id='charLimit'>
+              <input class='text' type="number" min=1 max=255 id='charLimit'> Character Limit
             </div>
             <div class='column-under'>
-              <input type="password" placeholder="Password" id='addPassword' name="newPass" >
+              <input class='text' type="password" placeholder="Password" id='addPassword' name="newPass" >
             <div>
               <input type="checkbox" id='show-password'> Show Password
             </div>
