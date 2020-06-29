@@ -51,3 +51,37 @@ article {
   border: 2px solid #0069c0;
   outline: none;
 }
+
+.btn-design {
+  outline: none;
+  background-color: transparent;
+  border-radius: 5px;
+}
+
+#edit {
+  margin: 0.5rem;
+}
+
+.secondary:hover {
+  background-color: orange;
+  transition-duration: 0.6s;
+  border-radius: 20px;
+}
+
+#copy:hover{
+  background-color: $backgroundColor;
+  transition-duration: 0.6s;
+  border-radius: 20px;
+}
+
+#edit:hover {
+  background-color: yellow;
+  transition-duration: 0.6s;
+  border-radius: 20px;
+}
+
+#delete:hover {
+  background-color: red;
+  transition-duration: 0.6s;
+  border-radius: 20px;
+}

@@ -76,15 +76,19 @@ $(() => {
                 <h3>${accountData.url}</h3>
                 <h3 >${accountData.username}</h3> <!-- stretch to change username-->
               </div>
-              <div class="hover-website">
+              <div class="hover-website left-flex">
+                <input class='text' type='text' id='editPassword' name='editPass' value='${accountData.password}'>
+                <div class='row-beside'>
+                <div>
+                  <button id='copy' class="material-icons-two-tone copy btn-design">content_copy</button>
+                </div>
                 <form id="editPass" class='row-beside' method="post" action="/websites/${accountData.id}">
-                  <input class='text' type='text' id='editPassword' name='editPass' value='${accountData.password}'>
-                  <button id='copy' class="material-icons-two-tone copy">content_copy</button>
-                  <button id='edit' class="material-icons-two-tone">build</button>
+                  <button id='edit' class="material-icons-two-tone btn-design">build</button>
                 </form>
                 <form action="/websites/${accountData.id}/delete" method="POST">
-                <button id='delete' class="material-icons-two-tone">delete</button>
+                  <button id='delete' class="material-icons-two-tone btn-design">delete</button>
                 </form>
+                </div>
               </div>
               </div>
             </div>

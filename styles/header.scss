@@ -108,6 +108,10 @@ header {
   padding: 0.5rem;
 }
 
+.left-flex {
+  display: flex;
+  justify-content: flex-end;
+}
  // New website Form
  .new-website-form {
    display: none;
