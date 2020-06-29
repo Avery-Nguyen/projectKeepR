@@ -125,7 +125,7 @@ $(() => {
             const passwordField = $(this).parent().parent().find("#editPassword");
             passwordField.select();
               document.execCommand("copy");
-              alert("copied")
+
             });
           },
           function() {
