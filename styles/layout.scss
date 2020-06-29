@@ -69,19 +69,19 @@ article {
   border-radius: 20px;
 }
 
-#copy:hover{
+.copy:hover{
   background-color: $backgroundColor;
   transition-duration: 0.6s;
   border-radius: 20px;
 }
 
-#edit:hover {
+.edit:hover {
   background-color: yellow;
   transition-duration: 0.6s;
   border-radius: 20px;
 }
 
-#delete:hover {
+.delete:hover {
   background-color: red;
   transition-duration: 0.6s;
   border-radius: 20px;
