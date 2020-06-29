@@ -25,6 +25,7 @@ app.use(cookieParser());
 
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 app.use("/styles", sass({
   src: __dirname + "/styles",
   dest: __dirname + "/public/styles",
@@ -38,12 +39,15 @@ app.use(express.static("public"));
 const usersRoutes = require("./routes/users");
 const websitesRoutes = require("./routes/websites");
 const deleteWebsiteRoutes = require("./routes/deleteWebsite")
+const editPassRoutes = require("./routes/editPass")
+
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 app.use("/users", usersRoutes(db));
 app.use("/websites", websitesRoutes(db));
 app.use("/websites/:id/delete", deleteWebsiteRoutes(db))
+app.use("/websites/:id", editPassRoutes(db))
 // Note: mount other resources here, using the same pattern above
 
 

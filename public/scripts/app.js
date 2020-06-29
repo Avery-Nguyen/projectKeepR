@@ -77,12 +77,12 @@ $(() => {
                 <h3 >${accountData.username}</h3> <!-- stretch to change username-->
               </div>
               <div class="hover-website">
-                <form class='row-beside'>
-                  <input type='text' id='editPassword' value='${accountData.password}'>
+                <form id="editPass" class='row-beside' method="post" action="/websites/${accountData.id}">
+                  <input type='text' id='editPassword' name='editPass' value='${accountData.password}'>
+                  <button id='copy' class="material-icons-two-tone copy">content_copy</button>
+                  <button id='edit' class="material-icons-two-tone">build</button>
                 </form>
-                <form>
-                <button id='copy' class="material-icons-two-tone copy">content_copy</button>
-                <button id='edit' class="material-icons-two-tone">build</button>
+                <form action="/websites/${accountData.id}/delete" method="POST">
                 <button id='delete' class="material-icons-two-tone">delete</button>
                 </form>
               </div>
@@ -100,6 +100,7 @@ $(() => {
     const renderAccounts = (accounts) => {
       for (const account in accounts) {
         for (const acc in account) {
+          console.log(accounts[account][acc])
           const category = accounts[account][acc].category;
           const $account = createAccountElement(accounts[account][acc]);
           if (category === 'social') {
@@ -121,7 +122,8 @@ $(() => {
             const passwordField = $(this).parent().parent().find("#editPassword");
             passwordField.select();
               document.execCommand("copy");
-            })
+              alert("copied")
+            });
 
           },
           function() {
@@ -133,7 +135,10 @@ $(() => {
 
       }
 
-
+      $(this).find("#edit").click(function (event) {
+        event.preventDefault(event);
+        $.post( `/websites/${accounts[account][acc].id}`, $( "#editPassword" ).serialize());
+      })
 
     }
 
