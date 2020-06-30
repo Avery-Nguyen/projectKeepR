@@ -39,11 +39,11 @@
       <section class='new-website-form'> <!-- New website form -->
         <article>
           <!-- <h2>New Password Form</h2> -->
-          <form class="row-beside new-website" method="POST" action="/websites" id="newAccount">
+          <form class="row-beside new-website" method="POST" action="/websites" name="newAccount" id="newAccount">
             <div class='url-info'>
               <input class='text' type="text" placeholder="Website" name="newWebsite" id='addWebsite'><br>
               <input class='text' type="text" placeholder="Username"  name="newUsername" id='addUsername'><br>
-              <select class='text' name="newCategory">
+              <select id="categorySelect" class='text' name="newCategory">
                 <option value="" disabled selected hidden>Select a Category</option>
                 <option value="social" id='social'>Social</option>
                 <option value="work" id='work'>Work</option>
@@ -60,7 +60,7 @@
               <label for="specialCharacter">Special Characters</label><br>
               <input type="checkbox" class='radio' id="numbers" name="numbers" value="numbers">
               <label for="numbers">Numbers</label><br>
-              <input class='text' type="number" min=1 max=255 id='charLimit'> Character Limit
+              <input class='text' type="number" value=8 min=1 max=255 id='charLimit'> Character Limit
             </div>
             <div class='column-under'>
               <input class='text' type="password" placeholder="Password" id='addPassword' name="newPass" >
@@ -106,9 +106,11 @@
     </footer>
 
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="/scripts/form-validation.js"></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
     <script type="text/javascript" src="/scripts/styles.js"></script>
-    <script type="text/javascript" src="/scripts/helper.js"></script>
+
 </body>
 
 </html>

@@ -1,7 +1,6 @@
 
 $(() => {
 
-
   const $genBtn = $("#generate");
   $genBtn.on("click", (event) => {
     event.preventDefault(event);
@@ -122,11 +121,6 @@ $(() => {
           $(this).find(".hover-website").hide();
         });
     };
-    // $(".edit").click(function (event) {
-    //   event.preventDefault(event);
-    //   console.log(account.id)
-    //   $.post(`/websites/${account.id}`, $(this).parent().parent().parent().find(".editPassword").serialize());
-    // });
   }
 
 
@@ -143,6 +137,24 @@ $(() => {
   }
 
   loadAccounts();
+
+  $("#newAccount").validate({
+    rules: {
+      newWebsite: "required",
+      newUsername: "required",
+      newCategory: "required",
+      newPass: "required"
+    },
+    messages: {
+      newWebsite: "Please enter a URL",
+      newUsername: "Please enter your username",
+      newCategory: "Please select a category",
+      newPass: "Please provide your password"
+    },
+    submitHandler: function(form) {
+      form.ajaxSubmit();
+    }
+  });
 
 })
 
