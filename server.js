@@ -77,6 +77,9 @@ app.get("/", (req, res) => {
           .json({ error: err.message });
       });
 });
+app.get("/login", (req, res) => {
+  res.render('login')
+});
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
