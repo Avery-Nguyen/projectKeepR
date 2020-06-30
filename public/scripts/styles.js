@@ -100,4 +100,12 @@ $( document ).ready(function() {
     $oTitle.show();
   });
 
+  $('.slider').click(function() {
+    $('body').toggleClass('dark-theme');
+    $('header').toggleClass('dark-theme');
+    $('.account').toggleClass('dark-theme');
+    $('.website-info').toggleClass('dark-theme');
+    $('.new-website').toggleClass('dark-theme');
+  });
+
 });

@@ -104,7 +104,8 @@ $(() => {
         });
      });
 
-      $(".arrange-website").hover(function () {
+      $(".arrange-website").hover(function (event) {
+        event.preventDefault(event);
         $(this).find("#copiedAlert").hide();
         $(this).find(".hover-website").show();
         $(this).find(".copy").click(function (event) {
