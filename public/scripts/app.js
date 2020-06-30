@@ -45,7 +45,7 @@ $(() => {
     const $account = $(`
       <article class="arrange-website" id="accountContainer">
         <section class="account">
-          <img class ='website-img' src="https://logo.clearbit.com/${accountData.url}" data-default-src="https://http.cat/404">
+          <img class ='website-img' src="https://logo.clearbit.com/${accountData.url}" data-default-src="https://media0.giphy.com/media/9J7tdYltWyXIY/giphy.gif?cid=ecf05e47e8e8d9054876692ac07204e6c150f72532cd528f&rid=giphy.gif">
             <div class="row-beside website-info">
             <div class='url-username-display'>
                 <h3>${accountData.url}</h3>

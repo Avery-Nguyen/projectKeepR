@@ -106,6 +106,7 @@ $( document ).ready(function() {
     $('.account').toggleClass('dark-theme');
     $('.website-info').toggleClass('dark-theme');
     $('.new-website').toggleClass('dark-theme');
+    $('aside').toggleClass('dark-theme');
   });
 
 });

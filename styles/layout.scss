@@ -189,49 +189,28 @@ input:checked + .slider:before {
 
 body.dark-theme {
   background-color: $darkPrime;
-  height: 100%;
-  font-family: 'Roboto', sans-serif;
   color: $lightcolour;
-  h1 {
-    color: #263238;
-
-  }
 }
 
 header.dark-theme {
-  display: flex;
   background-color: $darkSecondary;
-  justify-content: space-between;
-  padding: 1rem;
-  position: fixed;
-  top: 0;
-  height: 130px;
-  width: 100%;
 }
 
 .account.dark-theme {
-  display: flex;
-  flex-direction: column;
-  height: 12rem;
-  min-width: 20rem;
   background-color: $darkSecondary;
-  box-shadow: 5px 5px 10px #888888;
-  margin: 1rem;
-  border-radius: 5px;
 }
 
 .website-info.dark-theme {
-  display: flex;
-  justify-content: space-between;
   background-color: $darkPrime;
-  border-radius: 5px;
 }
 
 .new-website.dark-theme {
-  display: flex;
-  justify-content: space-around;
-  padding: 1rem;
   background-color: $secondaryFontColor;
-  margin-top: 1rem;
-  border-radius: 5px;
+}
+
+aside.dark-theme {
+  background-color: $secondaryFontColor;
+  span:hover {
+    color: $darkSecondary;
+  }
 }
