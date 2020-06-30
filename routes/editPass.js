@@ -4,9 +4,8 @@ const router  = express.Router({ mergeParams:true});
   module.exports = (db) => {
 
     router.post("/", (req, res) => {
-
+      console.log(req.body)
       const data = req.body.editPass
-      console.log(data)
       db.query(`
       UPDATE websites
       SET password = $2
