@@ -1,9 +1,13 @@
 INSERT INTO websites (user_id, organization_id, url, password, username, category)
-VALUES (1, 1, 'https://www.facebook.com/', 'H3ll0', 'XxalicexX', 'social'),
-(2, 2, 'https://ca.linkedin.com/', 'W0rld', '123Avery', 'work'),
-(4, 1, 'https://www.instagram.com/', 'sw33t', '00Alex00', 'entertainment'),
+VALUES (1, null, 'https://www.facebook.com/', 'H3ll0', 'XxalicexX', 'social'),
+(1, null, 'https://www.instagram.com/', 'sw33t', 'XxalicexX', 'social'),
+(4,  null, 'https://www.instagram.com/', 'sw33t', '00Alex00', 'social'),
+(2, 2, 'https://www.lighthouselabs.ca/', 'toughPassword', 'LHLrocks', 'work'),
+(4, 1, 'https://www.pizzahut.com/', 'passw0rd', 'employee', 'work'),
+(2, null, 'https://www.youtube.com/', '1million', 'subscribePlz', 'entertainment'),
+(2, null, 'https://ca.linkedin.com/', 'W0rld', '123Avery', 'work'),
 
-(3, 1, 'https://www.carrieunderwood.com/', 'sw33t', '00carrie', 'other'),
+(3, null, 'https://www.carrieunderwood.com/', 'sw33t', '00carrie', 'other'),
 (3, 3, 'https://www.underwoodfanpage.com/', 'sw33t', '00underwood', 'social'),
 (3, 3, 'https://www.carriefanpage.com/', 'sw33t', '#1fan', 'social'),
 (3, 3, 'https://www.whereiscarrie?.com/', 'sw33t', 'bestevar', 'work'),
