@@ -69,6 +69,17 @@ article {
   margin: 1px;
 }
 
+#categorySelect {
+  color:  #000000;
+}
+
+#addPassword {
+  color: black;
+}
+
+#edit {
+  margin: 0.5rem;
+}
 
 .secondary:hover {
   background-color: orange;
@@ -105,9 +116,3 @@ article {
   padding-right: 4px;
 }
 
-#categorySelect {
-  color:  #000000;
-}
-#addPassword {
-  color: black;
-}
