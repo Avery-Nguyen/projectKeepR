@@ -1,6 +1,29 @@
 
 $(() => {
 
+  const hideCategory = function() {
+    if ($("#category").find("#socialSection").children().length === 0) {
+    $("#category").find("#socialTitle").hide();
+  } else {
+    $("#category").find("#socialTitle").show();
+  }
+  if ($("#category").find("#workSection").children().length === 0) {
+    $("#category").find("#workTitle").hide();
+  } else {
+    $("#category").find("#workTitle").show();
+  }
+  if ($("#category").find("#entertainmentSection").children().length === 0) {
+    $("#category").find("#entertainmentTitle").hide();
+  } else {
+    $("#category").find("#entertainmentTitle").show();
+  }
+  if ($("#category").find("#otherSection").children().length === 0) {
+    $("#category").find("#otherTitle").hide();
+  } else {
+    $("#category").find("#otherTitle").show();
+  }
+}
+
   const $genBtn = $("#generate");
   $genBtn.on("click", (event) => {
     event.preventDefault(event);
@@ -43,12 +66,12 @@ $(() => {
 
   const createAccountElement = (accountData) => {
     const $account = $(`
-      <article class="arrange-website" id="accountContainer">
+      <article class="arrange-website accounts" id="accountContainer">
         <section class="account">
           <img class ='website-img' src="https://logo.clearbit.com/${accountData.url}" data-default-src="https://http.cat/404">
-            <div class="row-beside website-info">
-            <div class='url-username-display'>
-                <h3>${accountData.url}</h3>
+            <div class="row-beside website-info" search1>
+            <div class='url-username-display search2'>
+                <h3 class="url">${accountData.url}</h3>
                 <h3 class='usename-text'>${accountData.username}</h3> <!-- stretch to change username-->
               </div>
               <div class="hover-website left-flex">
@@ -72,7 +95,6 @@ $(() => {
               </div>
               </div>
             </div>
-
         </section>
       </article>
           `)
@@ -85,8 +107,10 @@ $(() => {
     for (const account of accounts.websites) {
       const category = account.category; //selects category value
       const $account = createAccountElement(account); //takes in the object and feeds it to the function to render templates
+
       if (category === 'social') {
         $('#socialSection').prepend($account)
+
       } else if (category === 'work') {
         $('#workSection').append($account)
       } else if (category === 'entertainment') {
@@ -97,12 +121,12 @@ $(() => {
         console.log('invalid category')
       }
 
-      $('img[data-default-src]').each(function(){
+      $('img[data-default-src]').each(function () {
         var defaultSrc = $(this).data('default-src');
-        $(this).on('error', function(){
-          $(this).attr({src: defaultSrc});
+        $(this).on('error', function () {
+          $(this).attr({ src: defaultSrc });
         });
-     });
+      });
 
       $(".arrange-website").hover(function () {
         $(this).find("#copiedAlert").hide();
@@ -116,12 +140,34 @@ $(() => {
           $(this).parent().parent().parent().find("#copiedAlert").show();
 
         })
-
       },
         function () {
           $(this).find(".hover-website").hide();
         });
-    };
+      };
+
+      let search = $("#search-criteria");
+      let items = $(".accounts");
+
+      $("#search-criteria").on("keyup", function (e) {
+        let v = search.val().toLowerCase();
+        if (v == "") {
+          items.show();
+          return;
+        }
+        $.each(items, function () {
+
+          let it = $(this);
+          let lb = it.find(".url").text().toLowerCase();
+          if (lb.indexOf(v) == -1) {
+            it.hide();
+          } else {
+            it.show();
+          }
+        });
+      });
+  hideCategory();
+
   }
 
 
@@ -152,11 +198,10 @@ $(() => {
       newCategory: "Please select a category",
       newPass: "Please provide your password"
     },
-    submitHandler: function(form) {
+    submitHandler: function (form) {
       form.ajaxSubmit();
     }
   });
-
 })
 
 
