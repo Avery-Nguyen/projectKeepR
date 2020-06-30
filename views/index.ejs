@@ -3,13 +3,17 @@
 
 <head>
   <title>PasswordKeepR</title>
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
   <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
   <link rel="stylesheet" href="/styles/header.css" type="text/css">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;700&family=Roboto:wght@300;400;700&display=swap"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
+    rel="stylesheet">
 
   <style>
     .hidden {
@@ -25,24 +29,34 @@
     <div class="row-beside">
       <div class="userDisplay">
         <% for (const user of users) {%>
-          <% if (user.id == id) { %>
+        <% if (user.id == id) { %>
         <span id='loginDisplay'> <%= user.name%> </span>
         <h4 id='companyName'><%= user.organization%></h4>
-            <% } %>
+        <% } %>
         <% } %>
       </div>
-      <button id='logout'>Log Out</button>
+      <div class="row-beside">
+
+        <div class="search-container">
+          <form action="#">
+            <input type="text" placeholder="Search.." name="search">
+            <button type="submit"><i class="fa fa-search"></i></button>
+          </form>
+          <button id='logout'>Log Out</button>
+        </div>
+      </div>
     </div>
   </header>
-    <main>
-      <div class='website-display'>
-      <section class='new-website-form'> <!-- New website form -->
+  <main>
+    <div class='website-display'>
+      <section class='new-website-form'>
+        <!-- New website form -->
         <article>
           <!-- <h2>New Password Form</h2> -->
           <form class="row-beside new-website" method="POST" action="/websites" name="newAccount" id="newAccount">
             <div class='url-info'>
               <input class='text' type="text" placeholder="Website" name="newWebsite" id='addWebsite'><br>
-              <input class='text' type="text" placeholder="Username"  name="newUsername" id='addUsername'><br>
+              <input class='text' type="text" placeholder="Username" name="newUsername" id='addUsername'><br>
               <select id="categorySelect" class='text' name="newCategory">
                 <option value="" disabled selected hidden>Select a Category</option>
                 <option value="social" id='social'>Social</option>
@@ -56,19 +70,20 @@
               <label for="uppercase">Uppercase</label><br>
               <input type="checkbox" class='radio' id="lowercase" name="lowercase" value="lowercase">
               <label for="lowercase">Lowercase</label><br>
-              <input type="checkbox" class='radio' id="specialCharacter" name="specialCharacter" value="specialCharacter">
+              <input type="checkbox" class='radio' id="specialCharacter" name="specialCharacter"
+                value="specialCharacter">
               <label for="specialCharacter">Special Characters</label><br>
               <input type="checkbox" class='radio' id="numbers" name="numbers" value="numbers">
               <label for="numbers">Numbers</label><br>
               <input class='text' type="number" value=8 min=1 max=255 id='charLimit'> Character Limit
             </div>
             <div class='column-under'>
-              <input class='text' type="password" placeholder="Password" id='addPassword' name="newPass" >
-            <div>
-              <input type="checkbox" id='show-password'> Show Password
+              <input class='text' type="password" placeholder="Password" id='addPassword' name="newPass">
+              <div>
+                <input type="checkbox" id='show-password'> Show Password
+              </div>
             </div>
-           </div>
-            <button id='generate'class="material-icons-two-tone btn-design secondary">
+            <button id='generate' class="material-icons-two-tone btn-design secondary">
               create</button>
             <button id='add' class="material-icons-round new-form-btn">add_circle</button>
             <button id='cancel' class="material-icons new-form-btn">
@@ -76,7 +91,8 @@
           </form>
         </article>
       </section>
-      <section id="category"> <!-- display website info -->
+      <section id="category">
+        <!-- display website info -->
 
         <h2 class='align' id='socialTitle'>Social</h2>
         <div id="socialSection" class='row-beside categories'>
@@ -93,23 +109,24 @@
       </section>
     </div>
     <span class="material-icons" id='filter-symbol'>sort</span><br>
-    <aside class='filters'> <!-- sidebar-->
+    <aside class='filters'>
+      <!-- sidebar-->
       <span id='allFilter'>ALL</span><br>
       <span id='socialFilter'>SOCIAL</span><br>
       <span id='entertainmentFilter'>ENTERTAINMENT</span><br>
       <span id='workFilter'>WORK</span><br>
       <span id='othersFilter'>OTHERS</span><br>
     </aside>
-      </main>
-      <footer>
-        <button class="material-icons-round" id="addBtn" >add_circle</button>
-    </footer>
+  </main>
+  <footer>
+    <button class="material-icons-round" id="addBtn">add_circle</button>
+  </footer>
 
-    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
-    <script type="text/javascript" src="/scripts/form-validation.js"></script>
-    <script type="text/javascript" src="/scripts/app.js"></script>
-    <script type="text/javascript" src="/scripts/styles.js"></script>
+  <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+  <script type="text/javascript" src="/scripts/app.js"></script>
+  <script type="text/javascript" src="/scripts/styles.js"></script>
 
 </body>
 
