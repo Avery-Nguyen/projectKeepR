@@ -53,9 +53,6 @@ $(() => {
                 <h3 class='usename-text'>${accountData.username}</h3> <!-- stretch to change username-->
               </div>
               <div class="hover-website left-flex">
-                <div id="copiedAlert" style="border: 2px black solid; height: 50px; margin-top: 16px">
-                  <p>Copied to clipboard!</p>
-                </div>
                 <div>
                   <form class='row-beside editPass' method="post" action="/websites/${accountData.id}">
                     <input class='text editPassword' type='text' name='editPass' value='${accountData.password}'>
@@ -66,6 +63,11 @@ $(() => {
                     <form action="/websites/${accountData.id}/delete" method="POST">
                       <button  class="material-icons-two-tone btn-design delete">delete</button>
                     </form>
+                    <div id="copiedAlert">
+                      <span class="material-icons">
+                      library_add_check
+                      </span>
+                  </div>
                   </div>
                 </div>
               </div>
