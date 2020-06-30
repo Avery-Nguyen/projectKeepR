@@ -25,7 +25,13 @@
 
 <body>
   <header>
-    <span class="material-icons" id='logo'>security</span>
+    <div class="row-beside">
+      <span class="material-icons" id='logo'>security</span>
+      <label class="switch">
+        <input type="checkbox">
+        <span class="slider round"></span>
+      </label>
+    </div>
     <div class="row-beside">
       <div class="userDisplay">
         <% for (const user of users) {%>

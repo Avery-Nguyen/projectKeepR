@@ -68,9 +68,9 @@ $(() => {
     const $account = $(`
       <article class="arrange-website accounts" id="accountContainer">
         <section class="account">
-          <img class ='website-img' src="https://logo.clearbit.com/${accountData.url}" data-default-src="https://http.cat/404">
-            <div class="row-beside website-info" search1>
-            <div class='url-username-display search2'>
+          <img class ='website-img' src="https://logo.clearbit.com/${accountData.url}" data-default-src="https://media0.giphy.com/media/9J7tdYltWyXIY/giphy.gif?cid=ecf05e47e8e8d9054876692ac07204e6c150f72532cd528f&rid=giphy.gif">
+            <div class="row-beside website-info">
+            <div class='url-username-display'>
                 <h3 class="url">${accountData.url}</h3>
                 <h3 class='usename-text'>${accountData.username}</h3> <!-- stretch to change username-->
               </div>
@@ -128,7 +128,8 @@ $(() => {
         });
       });
 
-      $(".arrange-website").hover(function () {
+      $(".arrange-website").hover(function (event) {
+        event.preventDefault(event);
         $(this).find("#copiedAlert").hide();
         $(this).find(".hover-website").show();
         $(this).find(".copy").click(function (event) {
