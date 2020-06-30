@@ -75,7 +75,7 @@ header {
 .account {
   display: flex;
   flex-direction: column;
-  height: 10rem;
+  height: 12rem;
   min-width: 20rem;
   background-color: $websiteDisplay;
   box-shadow: 5px 5px 10px #888888;
@@ -91,14 +91,15 @@ header {
 }
 
 .website-img {
-  height: 50px;
-  width: 50px;
+  height: 100px;
+  width: 100px;
   margin: auto;
 }
 
 .align {
- background-color: #2195f2;
  padding: 0.25rem;
+ border-bottom:5px solid $sidebarColor;
+ border-radius: 10px;
 }
 
 .url-username-display {
@@ -112,6 +113,10 @@ header {
 .left-flex {
   display: flex;
   justify-content: flex-end;
+}
+
+.editPassword {
+  width: 100px;
 }
  // New website Form
  .new-website-form {

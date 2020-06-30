@@ -50,24 +50,23 @@ $(() => {
             <div class="row-beside website-info">
             <div class='url-username-display'>
                 <h3>${accountData.url}</h3>
-                <h3 >${accountData.username}</h3> <!-- stretch to change username-->
+                <h3 class='usename-text'>${accountData.username}</h3> <!-- stretch to change username-->
               </div>
               <div class="hover-website left-flex">
                 <div id="copiedAlert" style="border: 2px black solid; height: 50px; margin-top: 16px">
                   <p>Copied to clipboard!</p>
                 </div>
-                <div class='row-beside'>
-                <form class='row-beside editPass' method="post" action="/websites/${accountData.id}">
-                <input class='text editPassword' type='text' name='editPass' value='${accountData.password}'>
-
-                <button class="material-icons-two-tone btn-design edit">build</button>
-                </form>
                 <div>
-                  <button class="material-icons-two-tone copy btn-design">content_copy</button>
-                </div>
-                <form action="/websites/${accountData.id}/delete" method="POST">
-                  <button  class="material-icons-two-tone btn-design delete">delete</button>
-                </form>
+                  <form class='row-beside editPass' method="post" action="/websites/${accountData.id}">
+                    <input class='text editPassword' type='text' name='editPass' value='${accountData.password}'>
+                    <button class="material-icons-two-tone btn-design edit">build</button>
+                  </form>
+                  <div class='row-beside'>
+                    <button class="material-icons-two-tone copy btn-design">content_copy</button>
+                    <form action="/websites/${accountData.id}/delete" method="POST">
+                      <button  class="material-icons-two-tone btn-design delete">delete</button>
+                    </form>
+                  </div>
                 </div>
               </div>
               </div>
