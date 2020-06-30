@@ -13,6 +13,10 @@ header {
   height: 130px;
   width: 100%;
 }
+#login-header {
+  display: flex;
+  justify-content: flex-start;
+}
 
 .row-beside {
   display: flex;
