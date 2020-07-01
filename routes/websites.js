@@ -1,14 +1,24 @@
 const express = require('express');
 const router = express.Router();
+const crypto = require('crypto');
 
 module.exports = (db) => {
 
   router.post("/", (req, res) => {
+
+    const genRandomString = function(length){
+      return crypto.randomBytes(Math.ceil(length/2))
+              .toString('hex') /** convert to hexadecimal format */
+              .slice(0,length);   /** return required number of characters */
+    };
+
+    const salt = genRandomString(8);
+
     db.query(`
-      INSERT INTO websites (user_id, url, password, username, category)
-      VALUES ($1, $2, $3, $4, $5)
+      INSERT INTO websites (user_id, url, password, username, category, salt)
+      VALUES ($1, $2, $3, $4, $5, $6)
       returning *
-      ;`, [req.cookies.user_id, req.body.newWebsite, req.body.newPass, req.body.newUsername, req.body.newCategory])
+      ;`, [req.cookies.user_id, req.body.newWebsite, req.body.newPass, req.body.newUsername, req.body.newCategory, salt])
       .then(() => {
         res.redirect('/');
       }).catch(err => {
