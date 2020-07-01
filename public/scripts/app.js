@@ -69,6 +69,12 @@ $(() => {
     if (accountData.url.substr(0, prefix.length) !== prefix) {
       accountData.url = prefix + accountData.url;
     }
+
+    const bytes  = CryptoJS.AES.decrypt(accountData.password, accountData.salt);
+    const originalText = bytes.toString(CryptoJS.enc.Utf8);
+
+
+
     const $account = $(`
       <article class="arrange-website accounts" id="accountContainer">
         <section class="account">
@@ -83,7 +89,7 @@ $(() => {
               <div class="hover-website left-flex">
                 <div>
                   <form class='row-beside editPass' method="post" action="/websites/${accountData.id}">
-                    <input class='text editPassword' type='text' name='editPass' value='${accountData.password}'>
+                    <input class='text editPassword' type='text' name='editPass' value='${originalText}'>
                     <button class="material-icons-two-tone btn-design edit">build</button>
                   </form>
                   <div class='row-beside'>

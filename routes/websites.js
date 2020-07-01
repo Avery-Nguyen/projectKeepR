@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const CryptoJS = require("crypto-js");
 const crypto = require('crypto');
 
 module.exports = (db) => {
@@ -14,11 +15,13 @@ module.exports = (db) => {
 
     const salt = genRandomString(8);
 
+    const hash = CryptoJS.AES.encrypt(req.body.newPass, salt).toString();
+
     db.query(`
       INSERT INTO websites (user_id, url, password, username, category, salt)
       VALUES ($1, $2, $3, $4, $5, $6)
       returning *
-      ;`, [req.cookies.user_id, req.body.newWebsite, req.body.newPass, req.body.newUsername, req.body.newCategory, salt])
+      ;`, [req.cookies.user_id, req.body.newWebsite, hash, req.body.newUsername, req.body.newCategory, salt])
       .then(() => {
         res.redirect('/');
       }).catch(err => {
@@ -37,7 +40,6 @@ module.exports = (db) => {
                                                               );
     `;
     const value = [req.cookies.user_id];
-    console.log(query);
     db.query(query, value)
       .then(data => {
         const websites = data.rows;
