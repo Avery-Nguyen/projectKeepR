@@ -73,7 +73,7 @@ $(() => {
             <a>
             <div class="row-beside website-info">
             <div class='url-username-display'>
-                <h3>${accountData.url}</h3>
+                <h3 class="url">${accountData.url}</h3>
                 <h3 class='usename-text'>${accountData.username}</h3> <!-- stretch to change username-->
               </div>
               <div class="hover-website left-flex">
