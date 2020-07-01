@@ -68,10 +68,12 @@ $(() => {
     const $account = $(`
       <article class="arrange-website accounts" id="accountContainer">
         <section class="account">
-          <img class ='website-img' src="https://logo.clearbit.com/${accountData.url}" data-default-src="https://media0.giphy.com/media/9J7tdYltWyXIY/giphy.gif?cid=ecf05e47e8e8d9054876692ac07204e6c150f72532cd528f&rid=giphy.gif">
+          <a href='${accountData.url}' class ='website-img' target="_blank">
+              <img class ='website-img' src="https://logo.clearbit.com/${accountData.url}" data-default-src="https://media0.giphy.com/media/9J7tdYltWyXIY/giphy.gif?cid=ecf05e47e8e8d9054876692ac07204e6c150f72532cd528f&rid=giphy.gif">
+            <a>
             <div class="row-beside website-info">
             <div class='url-username-display'>
-                <h3 class="url">${accountData.url}</h3>
+                <h3>${accountData.url}</h3>
                 <h3 class='usename-text'>${accountData.username}</h3> <!-- stretch to change username-->
               </div>
               <div class="hover-website left-flex">
