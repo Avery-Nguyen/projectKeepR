@@ -7,7 +7,6 @@ VALUES (1, null, 'https://www.facebook.com/', 'U2FsdGVkX1/KoSnWGPk7e00klcZnxB556
 (2, null, 'https://www.youtube.com/', 'U2FsdGVkX1/KoSnWGPk7e00klcZnxB5569FodRxcs5g=', 'subscribePlz', 'entertainment', '1e0060bb'),
 (2, null, 'https://ca.linkedin.com/', 'U2FsdGVkX1/KoSnWGPk7e00klcZnxB5569FodRxcs5g=', '123Avery', 'work', '1e0060bb'),
 
-(3, null, 'https://www.carrieunderwood.com/', 'U2FsdGVkX1/KoSnWGPk7e00klcZnxB5569FodRxcs5g=', '00carrie', 'other', '1e0060bb'),
 (3, 3, 'https://www.underwoodfanpage.com/', 'U2FsdGVkX1/KoSnWGPk7e00klcZnxB5569FodRxcs5g=', '00underwood', 'social', '1e0060bb'),
 (3, 3, 'https://www.carriefanpage.com/', 'U2FsdGVkX1/KoSnWGPk7e00klcZnxB5569FodRxcs5g=', '#1fan', 'social', '1e0060bb'),
 (3, 3, 'https://www.whereiscarrie?.com/', 'U2FsdGVkX1/KoSnWGPk7e00klcZnxB5569FodRxcs5g=', 'bestevar', 'work', '1e0060bb'),

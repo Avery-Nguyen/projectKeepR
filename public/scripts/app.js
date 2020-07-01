@@ -121,8 +121,7 @@ $(() => {
       const $account = createAccountElement(account); //takes in the object and feeds it to the function to render templates
 
       if (category === 'social') {
-        $('#socialSection').prepend($account)
-
+        $('#socialSection').append($account);
       } else if (category === 'work') {
         $('#workSection').append($account)
       } else if (category === 'entertainment') {
