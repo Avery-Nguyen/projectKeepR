@@ -100,6 +100,13 @@ $( document ).ready(function() {
     $oTitle.show();
   });
 
+  $('#long-name').mouseenter(function(){
+    $(this).text('S.H.I.E.L.D')
+  });
+  $('#long-name').mouseleave(function(){
+    $(this).text('Super Helpful Implementation of Enigmas Layout Device')
+  });
+
   function toggleHandle() {
     $('body').toggleClass('dark-theme');
     $('header').toggleClass('dark-theme');
@@ -109,6 +116,14 @@ $( document ).ready(function() {
     $('aside').toggleClass('dark-theme');
   }
 
+  // function toggleHandle() {
+  //   $('body').css('background-color', '#263238');
+  //   $('body').css('color', '#ffffff');
+  //   $('header').css('background-color', '#000a12');
+  //   $('.account').css('background-color', '#000a12');
+  //   $('.website-info').css('background-color', '#263238');
+  //   $('.new-website').css('background-color', '#4f5b62');
+  // }
 
   $('.slider').click(function() {
     $(this).toggleClass('checked')
@@ -117,12 +132,7 @@ $( document ).ready(function() {
     // localStorage.setItem('theme', 'true');
   });
 
-  $('#long-name').mouseenter(function(){
-    $(this).text('S.H.I.E.L.D')
-  });
-  $('#long-name').mouseleave(function(){
-    $(this).text('Super Helpful Implementation of Enigmas Layout Device')
-  });
+
 
 });
 
