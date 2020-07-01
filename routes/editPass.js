@@ -4,7 +4,6 @@ const router  = express.Router({ mergeParams:true});
   module.exports = (db) => {
 
     router.post("/", (req, res) => {
-      console.log(req.body)
       const data = req.body.editPass
       db.query(`
       UPDATE websites
@@ -15,9 +14,7 @@ const router  = express.Router({ mergeParams:true});
       .then(() => {
 
         res.redirect('/');
-      }).catch(error => {
-        console.log(error)
-      })
+      }).catch(error => error)
     });
     return router;
   };
