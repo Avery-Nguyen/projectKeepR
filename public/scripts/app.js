@@ -142,10 +142,12 @@ $(() => {
 
         })
       },
+
         function () {
           $(this).find(".hover-website").hide();
         });
       };
+
 
       let search = $("#search-criteria");
       let items = $(".accounts");
@@ -157,7 +159,6 @@ $(() => {
           return;
         }
         $.each(items, function () {
-
           let it = $(this);
           let lb = it.find(".url").text().toLowerCase();
           if (lb.indexOf(v) == -1) {
@@ -166,8 +167,30 @@ $(() => {
             it.show();
           }
         });
+
+        if ($("#category").find("#socialSection").children(':hidden').length === $("#category").find("#socialSection").children().length) {
+          $("#category").find("#socialTitle").hide();
+        } else {
+          $("#category").find("#socialTitle").show();
+        }
+        if ($("#category").find("#workSection").children(':hidden').length === $("#category").find("#workSection").children().length) {
+          $("#category").find("#workTitle").hide();
+        } else {
+          $("#category").find("#workTitle").show();
+        }
+        if ($("#category").find("#entertainmentSection").children(':hidden').length === $("#category").find("#entertainmentSection").children().length) {
+          $("#category").find("#entertainmentTitle").hide();
+        }  else {
+          $("#category").find("#entertainmentTitle").show();
+        }
+        if ($("#category").find("#otherSection").children(':hidden').length === $("#category").find("#otherSection").children().length) {
+          $("#category").find("#otherTitle").hide();
+        }  else {
+          $("#category").find("#otherTitle").show();
+        }
       });
-  hideCategory();
+
+      hideCategory();
 
   }
 
