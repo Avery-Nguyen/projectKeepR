@@ -101,10 +101,11 @@ $( document ).ready(function() {
   });
 
   $('#long-name').mouseenter(function(){
-    $(this).text('S.H.I.E.L.D')
+
+    $(this).text('Super Helpful Implementation of Enigmas Layout Device')
   });
   $('#long-name').mouseleave(function(){
-    $(this).text('Super Helpful Implementation of Enigmas Layout Device')
+    $(this).text('S.H.I.E.L.D')
   });
 
   function toggleHandle() {
