@@ -65,10 +65,14 @@ $(() => {
   });
 
   const createAccountElement = (accountData) => {
+    let prefix = "https://";
+    if (accountData.url.substr(0, prefix.length) !== prefix) {
+      accountData.url = prefix + accountData.url;
+    }
     const $account = $(`
       <article class="arrange-website accounts" id="accountContainer">
         <section class="account">
-          <a href='${accountData.url}' class ='website-img' target="_blank">
+          <a href="${accountData.url}" class ='website-img' target="_blank">
               <img class ='website-img' src="https://logo.clearbit.com/${accountData.url}" data-default-src="https://media0.giphy.com/media/9J7tdYltWyXIY/giphy.gif?cid=ecf05e47e8e8d9054876692ac07204e6c150f72532cd528f&rid=giphy.gif">
             <a>
             <div class="row-beside website-info">
