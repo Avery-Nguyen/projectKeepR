@@ -40,7 +40,7 @@ const usersRoutes = require("./routes/users");
 const websitesRoutes = require("./routes/websites");
 const deleteWebsiteRoutes = require("./routes/deleteWebsite")
 const editPassRoutes = require("./routes/editPass")
-
+const logoutRoutes = require("./routes/logout")
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -48,6 +48,7 @@ app.use("/users", usersRoutes(db));
 app.use("/websites", websitesRoutes(db));
 app.use("/websites/:id/delete", deleteWebsiteRoutes(db));
 app.use("/websites/:id", editPassRoutes(db));
+app.use("/logout", logoutRoutes(db))
 
 // Note: mount other resources here, using the same pattern above
 
