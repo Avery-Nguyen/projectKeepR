@@ -15,6 +15,6 @@ VALUES (1, null, 'https://www.facebook.com/', 'H3ll0', 'XxalicexX', 'social'),
 (3, 3, 'https://www.WoWunderwood.com/', 'sw33t', 'Jay+Carrie', 'entertainment'),
 (3, 3, 'https://www.top20country.com/', 'sw33t', 'JaycobUnderwood', 'entertainment'),
 (3, 3, 'https://www.carrie.com/', 'sw33t', 'XxJayxX', 'entertainment'),
-(3, 3, 'https://www.carrieunderwoodoffical.com/', 'sw33t', '123Jay321', 'social'),
+(3, 3, 'https://www.carrieunderwoodofficial.com/', 'sw33t', '123Jay321', 'social'),
 (3, 3, 'https://www.carrieunderwoodunoffical.com/', 'sw33t', 'Jaycob111', 'other'),
 (3, 3, 'https://www.singinglessons.com/', 'sw33t', 'hello', 'work');
