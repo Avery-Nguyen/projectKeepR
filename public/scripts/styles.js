@@ -101,13 +101,41 @@ $( document ).ready(function() {
     $oTitle.show();
   });
 
-  $('.slider').click(function() {
+  $('#long-name').mouseenter(function(){
+
+    $(this).text('Super Helpful Implementation of Enigmas Layout Device')
+  });
+  $('#long-name').mouseleave(function(){
+    $(this).text('S.H.I.E.L.D')
+  });
+
+  function toggleHandle() {
     $('body').toggleClass('dark-theme');
     $('header').toggleClass('dark-theme');
     $('.account').toggleClass('dark-theme');
     $('.website-info').toggleClass('dark-theme');
     $('.new-website').toggleClass('dark-theme');
     $('aside').toggleClass('dark-theme');
+  }
+
+  // function toggleHandle() {
+  //   $('body').css('background-color', '#263238');
+  //   $('body').css('color', '#ffffff');
+  //   $('header').css('background-color', '#000a12');
+  //   $('.account').css('background-color', '#000a12');
+  //   $('.website-info').css('background-color', '#263238');
+  //   $('.new-website').css('background-color', '#4f5b62');
+  // }
+
+  $('.slider').click(function() {
+    $(this).toggleClass('checked')
+    $(this).toggleClass('focus')
+    toggleHandle();
+    // localStorage.setItem('theme', 'true');
   });
 
+
+
 });
+
+

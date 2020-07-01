@@ -204,10 +204,23 @@ $(() => {
         $('#accountContainerEntertainment').empty();
         $('#accountContainerOther').empty();
         renderAccounts(data);
+
       })
+
   }
 
+  // function darkTheme() {
+  //   if(localStorage.getItem('theme')){
+  //     $(this).toggleClass('checked')
+  //     $(this).toggleClass('focus')
+  //     toggleHandle();
+  //     localStorage.removeItem('theme')
+  //   }
+  // };
+
   loadAccounts();
+
+
 
   $("#newAccount").validate({
     rules: {
