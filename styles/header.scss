@@ -92,6 +92,7 @@ header {
   justify-content: space-between;
   background-color: #ffffff;
   border-radius: 5px;
+  height: 70px;
 }
 
 .website-img {
@@ -125,9 +126,11 @@ header {
  // New website Form
  .new-website-form {
    display: none;
+
  }
  .new-website {
   display: flex;
+  flex-direction: row;
   justify-content: space-around;
   padding: 1rem;
   background-color: $formColor;
@@ -148,6 +151,10 @@ header {
   transition-duration: 0.4s;
   display: flex;
   align-self: flex-end;
+}
+.editPass {
+  display: flex;
+  flex-direction: row;
 }
 
 #add {
