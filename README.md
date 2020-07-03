@@ -34,7 +34,7 @@ Jaycob Duffel (https://github.com/duffelshuffel)
 - NPM 5.x or above
 - PG 6.x
 
-## Instructions To Run
+## Getting Started
 
 - Fork this repository, then clone your fork of this repository.
 - Install dependencies using the npm install command.
