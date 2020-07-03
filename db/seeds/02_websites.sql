@@ -7,13 +7,14 @@ VALUES (1, null, 'https://www.facebook.com/', 'U2FsdGVkX1/KoSnWGPk7e00klcZnxB556
 (2, null, 'https://www.youtube.com/', 'U2FsdGVkX1/KoSnWGPk7e00klcZnxB5569FodRxcs5g=', 'subscribePlz', 'entertainment', '1e0060bb'),
 (2, null, 'https://ca.linkedin.com/', 'U2FsdGVkX1/KoSnWGPk7e00klcZnxB5569FodRxcs5g=', '123Avery', 'work', '1e0060bb'),
 
-(3, 3, 'https://www.underwoodfanpage.com/', 'U2FsdGVkX1/KoSnWGPk7e00klcZnxB5569FodRxcs5g=', '00underwood', 'social', '1e0060bb'),
+(3, 3, 'https://www.underwoodfanpage.com/', 'U2FsdGVkX1+JU9i6Z915+qW5RUnvNZWsdHcBKit3Keg=', '00underwood', 'social', '29f2208e'),
 (3, 3, 'https://www.carriefanpage.com/', 'U2FsdGVkX1/KoSnWGPk7e00klcZnxB5569FodRxcs5g=', '#1fan', 'social', '1e0060bb'),
 (3, 3, 'https://www.whereiscarrie?.com/', 'U2FsdGVkX1/KoSnWGPk7e00klcZnxB5569FodRxcs5g=', 'bestevar', 'work', '1e0060bb'),
-(3, 3, 'https://www.5stepstobecomecarrie.com/', 'sw33t', 'Jayc0b', 'work', '1e0060bb'),
+(3, 3, 'https://www.5stepstobecomecarrie.com/', 'U2FsdGVkX1/KoSnWGPk7e00klcZnxB5569FodRxcs5g=', 'Jayc0b', 'work', '1e0060bb'),
 (3, 3, 'https://www.WoWunderwood.com/', 'U2FsdGVkX1/KoSnWGPk7e00klcZnxB5569FodRxcs5g=', 'Jay+Carrie', 'entertainment', '1e0060bb'),
 (3, 3, 'https://www.top20country.com/', 'U2FsdGVkX1/KoSnWGPk7e00klcZnxB5569FodRxcs5g=', 'JaycobUnderwood', 'entertainment', '1e0060bb'),
 (3, 3, 'https://www.carrie.com/', 'U2FsdGVkX1/KoSnWGPk7e00klcZnxB5569FodRxcs5g=', 'XxJayxX', 'entertainment', '1e0060bb'),
-(3, 3, 'https://www.carrieunderwoodofficial.com/', 'U2FsdGVkX1/KoSnWGPk7e00klcZnxB5569FodRxcs5g=', '123Jay321', 'social', '1e0060bb'),
+(3, 3, 'https://www.carrieunderwoodofficial.com/', 'U2FsdGVkX1/KoSnWGPk7e00klcZnxB5569FodRxcs5g=', 'i<3carrie', 'social', '1e0060bb'),
+(3, 3, 'https://www.carrieunderwoodofficial.com/', 'U2FsdGVkX1/KoSnWGPk7e00klcZnxB5569FodRxcs5g=', 'imUrbiggestFAN', 'social', '1e0060bb'),
 (3, 3, 'https://www.carrieunderwoodunoffical.com/', 'U2FsdGVkX1/KoSnWGPk7e00klcZnxB5569FodRxcs5g=', 'Jaycob111', 'other', '1e0060bb'),
 (3, 3, 'https://www.singinglessons.com/', 'U2FsdGVkX1/KoSnWGPk7e00klcZnxB5569FodRxcs5g=', 'hello', 'work', '1e0060bb');
