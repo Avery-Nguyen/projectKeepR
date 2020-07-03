@@ -3,7 +3,7 @@ S.H.I.E.L.D.
 
 ## Project Overview
 
-S.H.I.E.L.D. is an app designed to store your login information. You can add however many different accounts you may have (ie LinkedIn, Github, social media, or any different account you may be registered to) and S.H.I.E.L.D. encrypts and stores the login information so you can relax and not stress about what password goes matches with which account! S.H.I.E.L.D. can even generate you a random password so your accounts are even more secure!
+S.H.I.E.L.D. is an app designed to store your login information. You can add however many different accounts you may have (ie LinkedIn, Github, social media, or any different account you may be registered to) and S.H.I.E.L.D. encrypts and stores the login information so you can relax and not stress about what password goes with which account! S.H.I.E.L.D. can even generate you a random password so your accounts are even more secure!
 
 ## Group Members
 
